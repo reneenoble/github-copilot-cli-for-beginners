@@ -343,6 +343,10 @@ Common cleanup scenarios:
 
 This is the moment developers say "I never want to work without this again."
 
+<img src="images/issue-to-pr-workflow.png" alt="Issue to PR Workflow using MCP - Shows the complete flow from getting a GitHub issue through creating a pull request" width="800"/>
+
+*Complete Issue-to-PR workflow: GitHub MCP retrieves issues and creates PRs, Filesystem MCP finds code, Context7 MCP provides best practices, and Copilot handles analysis and fixes*
+
 ### The Complete Workflow (No Copy-Paste, No Context Switching)
 
 ```bash

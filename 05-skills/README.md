@@ -53,6 +53,10 @@ copilot
 
 ### Skills vs Agents vs MCP
 
+<img src="images/skills-agents-mcp-comparison.png" alt="Comparison diagram showing the differences between Agents, Skills, and MCP Servers and how they combine into your workflow" width="800"/>
+
+*Three ways to extend Copilot CLI: Agents change how it thinks, Skills add commands, MCP connects to external services*
+
 | Feature | What It Does | When to Use |
 |---------|--------------|-------------|
 | **Agents** | Changes how AI thinks | Need specialized expertise |

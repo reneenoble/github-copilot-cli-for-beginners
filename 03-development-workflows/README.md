@@ -32,6 +32,10 @@ Similarly, developers have workflows for different tasks. Copilot CLI enhances e
 
 *The right tool for every development task: Code Review, Refactoring, Debugging, Testing, and Git Integration*
 
+<img src="images/five-workflows-swimlane.png" alt="Five Development Workflows: Code Review, Refactoring, Debugging, Test Generation, and Git Integration shown as horizontal swimlanes" width="800"/>
+
+*Each workflow follows a clear progression of steps, all enhanced by Copilot CLI*
+
 ---
 
 ## Workflow 1: Code Review
