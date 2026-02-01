@@ -1,6 +1,6 @@
 ![GitHub Copilot CLI for Beginners](./images/copilot-banner.png)
 
-[What You'll Learn](#what-youll-learn) | [Course Structure](#course-structure) | [Prerequisites](#prerequisites) | [Quick Start](#quick-start) | [Quick Reference](#quick-reference-card) | [Glossary](#glossary)
+🎯 [What You'll Learn](#what-youll-learn) | 📚 [Course Structure](#course-structure) | ✅ [Prerequisites](#prerequisites) | 🚀 [Quick Start](#quick-start) | 📋 [Quick Reference](#quick-reference-card) | 📖 [Glossary](#glossary)
 
 # GitHub Copilot CLI for Beginners
 
