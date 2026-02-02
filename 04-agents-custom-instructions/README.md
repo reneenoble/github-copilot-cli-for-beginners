@@ -849,6 +849,56 @@ You improve performance of existing code.
 
 **Success criteria**: You have agents that improve your workflow and produce consistent, high-quality output.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Starter template** - Copy this to `AGENTS.md` in your project root:
+
+```markdown
+---
+description: A team of specialized agents for this project
+---
+
+## Frontend
+
+You are a frontend specialist focused on React and accessibility.
+
+**Standards:**
+- Use functional components with hooks
+- Follow WCAG 2.1 AA accessibility guidelines
+- Keep components under 150 lines
+
+## Backend
+
+You are a backend specialist focused on Node.js APIs.
+
+**Standards:**
+- Use async/await (no callbacks)
+- Validate all inputs
+- Return consistent JSON response formats
+
+## Reviewer
+
+You analyze code without making changes.
+
+**Focus areas:**
+- Security vulnerabilities
+- Performance issues
+- Code maintainability
+```
+
+**Testing your agents:**
+```bash
+copilot
+> /agent
+# Select "Frontend" from the list
+> Create a button component with proper accessibility
+```
+
+**Tip:** The `description` field in the YAML frontmatter is required for agents to work.
+
+</details>
+
 ### Bonus Challenge: Instruction Library
 
 Create a `.github/instructions/` folder with at least 3 instruction files:

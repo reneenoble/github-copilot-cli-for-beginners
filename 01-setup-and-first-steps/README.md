@@ -601,6 +601,23 @@ After completing the demos, try these variations:
 
 **Success criteria**: You should have a complete, documented factorial function with error handling, built through conversation.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Sample prompts to try:**
+```bash
+> Write a Python function that calculates the factorial of a number
+> Add error handling for negative numbers and non-integers
+> Add a comprehensive docstring with examples
+```
+
+**Common issues:**
+- If Copilot asks clarifying questions, just answer them naturally
+- Use `/clear` if you want to start over
+- The context carries forward, so each prompt builds on the previous
+
+</details>
+
 ### Bonus Challenge: Compare the Modes
 
 Try this same task in all three modes:

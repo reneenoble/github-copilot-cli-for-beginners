@@ -755,6 +755,29 @@ After completing the demos, try these variations:
 
 **Success criteria**: You should be able to resume a session with context spanning multiple files.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Don't have a project?** Use this course repo! Try:
+```bash
+cd /path/to/github-copilot-cli-for-beginners
+copilot
+> @samples/buggy-code/js/ Review these files for common issues
+> What patterns do you see across these files?
+> /rename buggy-code-review
+> /exit
+```
+
+Then resume with: `copilot --continue`
+
+**Useful commands:**
+- `@file.js` - Reference a single file
+- `@folder/` - Reference all files in a folder (note the trailing `/`)
+- `/context` - Check how much context you're using
+- `/rename <name>` - Name your session for easy resuming
+
+</details>
+
 ### Bonus Challenge: Context Limits
 
 1. Find (or create) a large codebase

@@ -588,6 +588,40 @@ Using one of the sample files (`samples/buggy-code/js/userService.js` or `sample
 
 Document each step and the Copilot output.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Sample prompts for each step:**
+
+```bash
+copilot
+
+# Step 1: Review
+> @samples/buggy-code/js/userService.js Run a comprehensive security review
+
+# Step 2: Identify
+> Create a prioritized list of issues. Rank by severity (critical, high, medium, low)
+
+# Step 3: Fix
+> Fix the SQL injection vulnerability. Show me the before and after code.
+
+# Step 4: Test
+> Generate Jest tests for the fixed userService, including tests that would catch SQL injection
+
+# Step 5: Commit
+> Generate a commit message for these security fixes
+```
+
+**Expected findings in the sample file:**
+- SQL injection (critical)
+- Missing input validation
+- Hardcoded credentials
+- Missing error handling
+
+**Tip:** If you want to save your fixed file, ask: "Write the fixed code to a new file called userService-fixed.js"
+
+</details>
+
 ### Bonus Challenge: Full Bug Fix
 
 1. Create a file with an intentional bug of your choice

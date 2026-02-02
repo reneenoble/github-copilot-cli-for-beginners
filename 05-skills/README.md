@@ -694,6 +694,50 @@ After completing the demos, try these variations:
 
 **Success criteria**: You have a working custom skill that Copilot automatically applies when relevant.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Not sure what to automate?** Here are beginner-friendly skill ideas:
+- **commit-message**: Generate consistent commit messages
+- **code-review**: Check code against your team's standards
+- **readme-generator**: Create README files for new projects
+
+**Starter template** - Create `~/.copilot/skills/commit-message/SKILL.md`:
+
+```markdown
+---
+name: commit-message
+description: Generate a commit message for staged changes
+---
+
+# Commit Message Generator
+
+Generate a commit message following these rules:
+
+1. Use conventional commit format: type(scope): description
+2. Types: feat, fix, docs, style, refactor, test, chore
+3. Keep the first line under 72 characters
+4. Add a blank line then bullet points for details if needed
+
+Example:
+feat(auth): add password reset functionality
+
+- Add forgot password form
+- Send reset email via SendGrid
+- Add token expiration (24 hours)
+```
+
+**Test it:**
+```bash
+copilot
+> Generate a commit message for my staged changes
+# The skill should auto-trigger based on the description match
+```
+
+**If it doesn't trigger:** Try `/skills reload` then ask again.
+
+</details>
+
 ### Bonus Challenge: Share Your Skill
 
 1. Document your skill with examples

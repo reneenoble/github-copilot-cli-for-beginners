@@ -548,119 +548,11 @@ copilot
 
 ---
 
-## Building a Custom MCP Server (Advanced - Optional)
+## Building a Custom MCP Server (Advanced)
 
-> ⚠️ **This section is completely optional.** You can be highly productive with Copilot CLI using only the pre-built MCP servers (GitHub, filesystem, Context7). This section is for developers who want to connect Copilot to custom internal APIs.
+> 📖 **Want to connect Copilot to your own APIs?** See the [Custom MCP Server Guide](mcp-custom-server.md) for a complete walkthrough on building your own server with TypeScript. Additional details can be found in the [MCP for Beginners course](https://github.com/microsoft/mcp-for-beginners).
 >
-> **Prerequisites for this section:**
-> - Comfortable with TypeScript
-> - Experience with Node.js
-> - Understanding of async/await patterns
->
-> **Skip this section if:** You're new to Copilot CLI or just want to use the standard servers.
-
-Want to connect Copilot to your own APIs? Here's how to build a simple MCP server.
-
-### Project Setup
-
-```bash
-mkdir weather-mcp-server
-cd weather-mcp-server
-npm init -y
-npm install @modelcontextprotocol/sdk
-```
-
-### Server Implementation
-
-```typescript
-// index.ts
-import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-
-const server = new Server({
-  name: 'weather-server',
-  version: '1.0.0'
-}, {
-  capabilities: {
-    tools: {}
-  }
-});
-
-// Define available tools
-server.setRequestHandler('tools/list', async () => ({
-  tools: [
-    {
-      name: 'get_weather',
-      description: 'Get current weather for a city',
-      inputSchema: {
-        type: 'object',
-        properties: {
-          city: {
-            type: 'string',
-            description: 'City name'
-          }
-        },
-        required: ['city']
-      }
-    }
-  ]
-}));
-
-// Handle tool calls
-server.setRequestHandler('tools/call', async (request) => {
-  const { name, arguments: args } = request.params;
-
-  if (name === 'get_weather') {
-    // In real implementation, call weather API
-    const weather = await fetchWeather(args.city);
-    return {
-      content: [{
-        type: 'text',
-        text: `Weather in ${args.city}: ${weather.temp}F, ${weather.conditions}`
-      }]
-    };
-  }
-
-  throw new Error(`Unknown tool: ${name}`);
-});
-
-async function fetchWeather(city: string) {
-  // Mock implementation - replace with actual API call
-  return {
-    temp: 72,
-    conditions: 'Partly cloudy'
-  };
-}
-
-// Start server
-const transport = new StdioServerTransport();
-await server.connect(transport);
-```
-
-### Configuration
-
-```json
-{
-  "mcpServers": {
-    "weather": {
-      "type": "local",
-      "command": "node",
-      "args": ["./weather-mcp-server/index.js"],
-      "tools": ["*"]
-    }
-  }
-}
-```
-
-### Usage
-
-```bash
-copilot
-
-> What's the weather in Seattle?
-
-Weather in Seattle: 72F, Partly cloudy
-```
+> This is completely optional - the pre-built servers (GitHub, filesystem, Context7) cover most use cases.
 
 ---
 
@@ -695,12 +587,59 @@ After completing the demos, try these variations:
 
 **Success criteria**: You can seamlessly access GitHub and filesystem data from within Copilot.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Step 1: Verify GitHub MCP**
+```bash
+copilot
+> List my open pull requests
+# If this works, GitHub MCP is already set up!
+# If not, run: /login
+```
+
+**Step 2: Create the config file**
+
+Create `~/.copilot/mcp-config.json` (or use `/mcp add`):
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+**Important JSON tips:**
+- Use double quotes `"` (not single quotes)
+- No trailing commas after the last item
+- Validate at [jsonlint.com](https://jsonlint.com/) if you get errors
+
+**Step 3: Test the workflow**
+```bash
+copilot
+> /mcp show
+# Should show filesystem as enabled
+
+> List all JavaScript files in this project
+# Uses filesystem MCP
+
+> What issues are assigned to me?
+# Uses GitHub MCP
+```
+
+**If MCP isn't working:** Restart Copilot after editing the config file.
+
+</details>
+
 ### Bonus Challenge: Build a Custom MCP Server
 
-1. Choose an API you use regularly (weather, stocks, your company API)
-2. Build a basic MCP server that connects to it
-3. Add it to your configuration
-4. Use it in a workflow with other servers
+Ready to go deeper? Follow the [Custom MCP Server Guide](mcp-custom-server.md) to build your own server that connects to any API.
 
 ---
 

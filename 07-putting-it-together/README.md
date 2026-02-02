@@ -586,6 +586,50 @@ Document your workflow as you go.
 
 **Success criteria**: You've completed a feature using at least 2 agents and 1 skill.
 
+<details>
+<summary>💡 Hints (click to expand)</summary>
+
+**Guided walkthrough using "Add a dark mode toggle":**
+
+```bash
+# STEP 1: Start and gather context
+copilot
+> @src/ What UI framework does this project use?
+> @package.json What dependencies are installed?
+
+# STEP 2: Design with frontend agent
+> /agent
+# Select "frontend" (or create one if you don't have it)
+> Design a dark mode toggle component with these requirements:
+> - Toggle button in the header
+> - Save preference to localStorage
+> - Apply CSS class to body element
+
+# STEP 3: Design with backend agent (if applicable)
+> /agent
+# Select "backend"
+> Do I need any API changes to persist dark mode preference per user?
+
+# STEP 4: Implement
+> Implement the DarkModeToggle component based on your design
+
+# STEP 5: Generate tests
+> Generate tests for the dark mode toggle
+# If you have a test-generation skill, it auto-triggers here
+
+# STEP 6: Create PR
+> Create a pull request for the dark mode feature
+```
+
+**Don't have agents set up?** You can still complete this exercise:
+- Skip the `/agent` steps
+- Ask Copilot directly: "Design a dark mode toggle as a frontend expert"
+- The key is practicing the full workflow from design → implementation → tests → PR
+
+**Simpler alternative:** If dark mode feels complex, try "Add a 'Back to Top' button" instead - it's a single-file feature that still exercises the full workflow.
+
+</details>
+
 ### Bonus Challenge: Workflow Automation
 
 1. Create a pre-commit hook that runs Copilot review
