@@ -155,7 +155,7 @@ MCP servers are configured in `~/.copilot/mcp-config.json` (global) or `.copilot
 
 ## MCP Server 1: Filesystem
 
-Access files with advanced capabilities beyond basic `@` syntax.
+Access files with additional capabilities beyond basic `@` syntax.
 
 ### Configuration
 
@@ -550,7 +550,7 @@ copilot
 
 ---
 
-## Building a Custom MCP Server (Advanced)
+## Building a Custom MCP Server (Optional)
 
 > 📖 **Want to connect Copilot to your own APIs?** See the [Custom MCP Server Guide](mcp-custom-server.md) for a complete walkthrough on building your own server with TypeScript. Additional details can be found in the [MCP for Beginners course](https://github.com/microsoft/mcp-for-beginners).
 >

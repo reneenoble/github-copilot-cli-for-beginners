@@ -326,7 +326,7 @@ copilot -p "How do I read a file in Python?"
 **Key insight**: Programmatic mode gives you a quick answer and exits. No conversation, just input → output.
 
 <details>
-<summary>📚 <strong>Advanced: Using Programmatic Mode in Scripts</strong> (click to expand)</summary>
+<summary>📚 <strong>Going Further: Using Programmatic Mode in Scripts</strong> (click to expand)</summary>
 
 Once you're comfortable, you can use `-p` in shell scripts:
 

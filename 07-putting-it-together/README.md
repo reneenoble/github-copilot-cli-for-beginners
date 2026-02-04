@@ -112,7 +112,7 @@ copilot
 > I need to add input validation to the login form. What's the best approach?
 
 # 2. Review existing code
-> @src/components/LoginForm.js What validation does this currently have?
+> @samples/src/auth/login.js What validation does this currently have?
 
 # 3. Plan the implementation
 > /plan Add email format validation and password strength checking
@@ -121,7 +121,7 @@ copilot
 > Add email format validation using a regex pattern
 
 # 5. Generate tests
-> @src/components/LoginForm.js Generate Jest tests for the validation logic
+> @samples/src/auth/login.js Generate Jest tests for the validation logic
 
 # 6. Review your changes
 > /review
@@ -140,7 +140,7 @@ copilot -p "Generate commit message for: $(git diff --staged)"
 
 ---
 
-## The Integration Pattern (For Advanced Users)
+## The Integration Pattern (For Power Users)
 
 Here's the mental model for combining everything:
 
@@ -266,7 +266,7 @@ copilot
 
 ---
 
-## Workflow 3: Code Review Automation (Optional - Advanced)
+## Workflow 3: Code Review Automation (Optional)
 
 > 💡 **This section is optional.** Pre-commit hooks are useful for teams but not required to be productive. Skip this if you're just getting started.
 
@@ -374,7 +374,7 @@ copilot
 > @package.json What does this project do and what are the main dependencies?
 
 # Understand architecture
-> @src/ Explain the high-level architecture of this codebase
+> @samples/src/ Explain the high-level architecture of this codebase
 
 # Find the entry point
 > Where does the application start? Show me the main entry point.
@@ -472,7 +472,7 @@ $COMMITS
 Include: Summary, Changes Made, Testing Done, Screenshots Needed"
 ```
 
-### CI/CD Integration (Advanced - Optional)
+### CI/CD Integration (Optional)
 
 > ⚠️ **This section is for teams with existing CI/CD pipelines.** Skip this if you're new to GitHub Actions or CI/CD concepts. The pre-commit hook above is a simpler starting point.
 
@@ -583,7 +583,7 @@ Document your workflow as you go.
 ```bash
 # STEP 1: Start and gather context
 copilot
-> @src/ What UI framework does this project use?
+> @samples/src/ What UI framework does this project use?
 
 # STEP 2: Plan the feature
 > /plan Add a "back to top" button that appears when the user scrolls down

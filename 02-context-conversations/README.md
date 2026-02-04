@@ -45,6 +45,8 @@ This section covers everything you need to work effectively with context. Master
 
 The `@` symbol references files and directories in your prompts. It's how you tell Copilot "look at this file."
 
+> 💡 **Note**: All examples in this course use the `samples/` folder included in this repository, so you can try every command directly.
+
 ### Try It Now (No Setup Required)
 
 You can try this with any file on your computer:
@@ -69,9 +71,9 @@ copilot
 
 | Pattern | What It Does | Example Use |
 |---------|--------------|-------------|
-| `@file.js` | Reference a single file | `Review @samples/src/app.js` |
+| `@file.js` | Reference a single file | `Review @samples/src/index.js` |
 | `@folder/` | Reference all files in a directory | `Review @samples/src/api/` |
-| `@file1.js @file2.js` | Reference multiple files | `Compare @login.js @register.js` |
+| `@file1.js @file2.js` | Reference multiple files | `Compare @samples/src/auth/login.js @samples/src/auth/register.js` |
 
 ### Reference a Single File
 
@@ -329,13 +331,13 @@ No re-explaining. No re-reading files. Just continue working.
 
 ---
 
-# Optional: Advanced Context
+# Optional: Going Deeper
 
 > 💡 **For beginners**: The sections below are optional. Return to these once you're comfortable with the basics above. You can be very productive with just the basic @ syntax and session management covered earlier.
 
 ---
 
-## Advanced @ Patterns
+## Additional @ Patterns
 
 For power users, Copilot supports glob patterns and image references:
 

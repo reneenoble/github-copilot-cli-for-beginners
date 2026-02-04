@@ -51,7 +51,7 @@ Similarly, developers have workflows for different tasks. Copilot CLI enhances e
 ```bash
 copilot
 
-> Review @src/api/users.js for code quality
+> Review @samples/src/api/users.js for code quality
 ```
 
 ### Security-Focused Review
@@ -59,7 +59,7 @@ copilot
 ```bash
 copilot
 
-> Review @src/auth/login.js for security vulnerabilities. Check for: SQL injection, XSS, CSRF, insecure authentication, and sensitive data exposure
+> Review @samples/src/auth/login.js for security vulnerabilities. Check for: SQL injection, XSS, CSRF, insecure authentication, and sensitive data exposure
 ```
 
 ### Performance Review
@@ -67,7 +67,7 @@ copilot
 ```bash
 copilot
 
-> Review @src/services/dataProcessor.js for performance issues. Look for: unnecessary loops, memory leaks, inefficient algorithms, and blocking operations
+> Review @samples/src/services/userService.js for performance issues. Look for: unnecessary loops, memory leaks, inefficient algorithms, and blocking operations
 ```
 
 ### Interactive Code Review
@@ -75,7 +75,7 @@ copilot
 ```bash
 copilot
 
-> @src/api/users.js Review this file for:
+> @samples/src/api/users.js Review this file for:
 > - Security vulnerabilities
 > - Performance issues
 > - Code style and best practices
@@ -96,11 +96,28 @@ copilot
 ```bash
 copilot
 
-> Review @src/api/ and create a markdown checklist of issues found, categorized by:
+> Review @samples/src/api/ and create a markdown checklist of issues found, categorized by:
 > - Critical (security vulnerabilities)
 > - High (bugs, data corruption risks)
 > - Medium (performance, maintainability)
 > - Low (style, minor improvements)
+```
+
+### Understanding Git Changes (Important for /review)
+
+Before using the `/review` command, you need to understand two types of changes in git:
+
+| Change Type | What It Means | How to See |
+|-------------|---------------|------------|
+| **Staged changes** | Files you've marked for the next commit with `git add` | `git diff --staged` |
+| **Unstaged changes** | Files you've modified but haven't added yet | `git diff` |
+
+```bash
+# Quick reference
+git status           # Shows both staged and unstaged
+git add file.js      # Stage a file for commit
+git diff             # Shows unstaged changes
+git diff --staged    # Shows staged changes
 ```
 
 ### Using the /review Command
@@ -117,17 +134,6 @@ copilot
 > /review Check for security issues in authentication
 # Run review with specific focus area
 ```
-
-> 💡 **What are staged and unstaged changes?**
-> - **Staged changes**: Files you've marked for the next commit with `git add`
-> - **Unstaged changes**: Files you've modified but haven't added yet
->
-> To see your changes:
-> ```bash
-> git status           # Shows both staged and unstaged
-> git diff             # Shows unstaged changes
-> git diff --staged    # Shows staged changes
-> ```
 
 > 💡 **Tip**: The code-review agent works best when you have pending changes. Stage your files with `git add` for more focused reviews.
 
@@ -154,7 +160,7 @@ copilot
 ```bash
 copilot
 
-> @legacy/userService.js This file uses callbacks. Refactor to async/await while:
+> @samples/src/services/userService.js This file uses callbacks. Refactor to async/await while:
 > - Maintaining the same function signatures
 > - Preserving error handling behavior
 > - Adding TypeScript types
@@ -172,7 +178,7 @@ copilot
 ```bash
 copilot
 
-> @src/controllers/userController.js @src/controllers/productController.js
+> @samples/src/services/userService.js @samples/src/services/productService.js
 > These files have duplicated error handling. Extract a common error handler.
 ```
 
@@ -181,7 +187,7 @@ copilot
 ```bash
 copilot
 
-> @legacy/oldModule.js Modernize this code:
+> @samples/src/services/userService.js Modernize this code:
 > - Convert var to const/let
 > - Use arrow functions where appropriate
 > - Replace .then() chains with async/await
@@ -193,7 +199,7 @@ copilot
 ```bash
 copilot
 
-> @src/utils/dateHelpers.js Before refactoring, generate tests for current behavior
+> @samples/src/utils/helpers.js Before refactoring, generate tests for current behavior
 
 # Get tests first
 
@@ -208,19 +214,19 @@ copilot
 
 ### Simple Debugging
 
-Start by describing what's wrong. Use these patterns with any file you're debugging:
+Start by describing what's wrong. Here are common debugging patterns you can try with the sample files:
 
 ```bash
 copilot
 
 # Pattern: "Expected X but got Y"
-> @your-file.js This function should return true, but it's returning false. Why?
+> @samples/buggy-code/js/userService.js The login function should reject invalid users, but it's not. Why?
 
 # Pattern: "Error message + location"
-> @your-file.js I'm getting "undefined is not a function" on line 15. What's wrong?
+> @samples/src/utils/helpers.js I'm getting "undefined is not a function" when calling formatDate. What's wrong?
 
 # Pattern: "Unexpected behavior"
-> @your-file.js The loop never ends. Help me find why.
+> @samples/buggy-code/js/paymentProcessor.js The total calculation seems wrong. Help me find why.
 ```
 
 > 💡 **Debugging tip**: Describe the *symptom* (what you see) and the *expectation* (what should happen). Copilot figures out the rest.
@@ -278,9 +284,9 @@ copilot
 
 > I'm getting this error:
 > TypeError: Cannot read property 'map' of undefined
->     at UserList (src/components/UserList.jsx:15:23)
+>     at Header (samples/src/components/Header.jsx:15:23)
 >
-> @src/components/UserList.jsx Explain why and how to fix it
+> @samples/src/components/Header.jsx Explain why and how to fix it
 ```
 
 ### Debugging with Test Case
@@ -288,7 +294,7 @@ copilot
 ```bash
 copilot
 
-> @src/api/payments.js This endpoint returns 500 errors for this input:
+> @samples/buggy-code/js/paymentProcessor.js This endpoint returns 500 errors for this input:
 > {"amount": -100, "currency": "USD"}
 >
 > Debug this: explain the root cause and provide a fix with input validation
@@ -299,9 +305,9 @@ copilot
 ```bash
 copilot
 
-> Users report that orders are sometimes duplicated.
-> @src/services/orderService.js @src/api/orders.js @src/utils/idGenerator.js
-> Trace through the order creation flow and identify where duplication could occur
+> Users report that user creation sometimes fails silently.
+> @samples/src/services/userService.js @samples/src/api/users.js @samples/src/utils/helpers.js
+> Trace through the user creation flow and identify where the issue could occur
 ```
 
 ### Log Analysis
@@ -380,7 +386,7 @@ describe('login', () => {
 ```bash
 copilot
 
-> @src/utils/validation.js Generate comprehensive unit tests using Jest:
+> @samples/src/utils/helpers.js Generate comprehensive unit tests using Jest:
 > - Test all exported functions
 > - Include edge cases: null, undefined, empty strings
 > - Include boundary testing
@@ -392,7 +398,7 @@ copilot
 ```bash
 copilot
 
-> @src/api/users.js Generate integration tests using supertest:
+> @samples/src/api/users.js Generate integration tests using supertest:
 > - Test all endpoints
 > - Test authentication requirements
 > - Test validation errors
@@ -405,7 +411,7 @@ copilot
 ```bash
 copilot
 
-> @src/services/paymentService.js Generate tests for these scenarios:
+> @samples/buggy-code/js/paymentProcessor.js Generate tests for these scenarios:
 > - Successful payment
 > - Insufficient funds
 > - Invalid card
@@ -418,9 +424,12 @@ copilot
 ```bash
 copilot
 
-> @src/utils/helpers.js @tests/helpers.test.js
-> The test file exists but doesn't cover the formatCurrency function.
-> Add tests for formatCurrency with edge cases
+> @samples/src/utils/helpers.js
+> Generate additional tests for the formatCurrency function with edge cases:
+> - Zero amount
+> - Negative numbers
+> - Very large numbers
+> - Invalid inputs
 ```
 
 ---
@@ -520,17 +529,17 @@ Here's a complete workflow for fixing a reported bug:
 copilot
 
 > Users report: 'Login fails with special characters in password'
-> @src/auth/login.js @src/utils/validation.js
+> @samples/src/auth/login.js @samples/src/utils/helpers.js
 > Analyze and identify the likely cause
 
 # 2. Debug the issue (continuing in same session)
 > Based on the analysis, the issue is in password validation.
-> @src/utils/validation.js Show me line 34 and explain the regex issue
+> @samples/src/utils/helpers.js Show me the validation logic and explain the issue
 
 > Fix the validatePassword function to handle special characters
 
 # 3. Generate tests for the fix
-> @src/utils/validation.js Generate tests specifically for:
+> @samples/src/utils/helpers.js Generate tests specifically for:
 > - Passwords with special characters (!@#$%^&*)
 > - Passwords with unicode characters
 > - Passwords with spaces
@@ -767,9 +776,35 @@ Try different approaches and notice what feels natural for your workflow.
 
 ---
 
+## 🎯 Checkpoint: You've Mastered the Essentials
+
+**Congratulations!** You now have all the core skills to be productive with GitHub Copilot CLI:
+
+| Skill | Chapter | You Can Now... |
+|-------|---------|----------------|
+| Basic Commands | Ch 01 | Use `-p`, interactive mode, and slash commands |
+| Context | Ch 02 | Reference files with `@`, manage sessions, understand context windows |
+| Workflows | Ch 03 | Review code, refactor, debug, generate tests, integrate with git |
+
+**You can stop here and be highly effective.** Chapters 04-06 cover additional features that add even more power and are worthwhile to learn, but aren't required for daily use.
+
+---
+
 ## What's Next
 
-You've mastered the core workflows. Now let's make Copilot even more powerful.
+The remaining chapters cover additional features that extend Copilot's capabilities:
+
+| Chapter | What It Covers | When You'll Want It |
+|---------|----------------|---------------------|
+| Ch 04: Agents | Create specialized AI personas | When you want domain experts (frontend, security) |
+| Ch 05: Skills | Auto-load instructions for tasks | When you repeat the same prompts often |
+| Ch 06: MCP | Connect external services | When you need live data from GitHub, databases |
+
+**Recommendation**: Try the core workflows for a week, then return to Chapters 04-06 when you have specific needs.
+
+---
+
+## Continue to Additional Topics
 
 In **[Chapter 04: Agents and Custom Instructions](../04-agents-custom-instructions/README.md)**, you'll learn:
 

@@ -83,17 +83,17 @@
 ### File References
 
 ```bash
-@filename.js              # Single file
-@src/api/users.js         # File with path
-@src/                     # Entire directory
-@src/**/*.ts              # Glob pattern
+@filename.js                      # Single file
+@samples/src/api/users.js         # File with path
+@samples/src/                     # Entire directory
+@samples/src/**/*.js              # Glob pattern
 ```
 
 ### Multiple Files
 
 ```bash
-> @file1.js @file2.js Compare these implementations
-> @src/api/ @tests/ Generate tests for all API endpoints
+> @samples/src/auth/login.js @samples/src/auth/register.js Compare these implementations
+> @samples/src/api/ Generate tests for all API endpoints
 ```
 
 ### Best Practices
@@ -241,7 +241,7 @@ Extend Copilot CLI with community plugins:
 ### Security Review
 
 ```bash
-copilot -p "Review @src/auth/ for security vulnerabilities"
+copilot -p "Review @samples/src/auth/ for security vulnerabilities"
 ```
 
 ### Code Review
@@ -249,20 +249,20 @@ copilot -p "Review @src/auth/ for security vulnerabilities"
 ```bash
 copilot
 > /review                         # Review staged changes
-> @src/api/users.js Review for security, performance, best practices
+> @samples/src/api/users.js Review for security, performance, best practices
 ```
 
 ### Test Generation
 
 ```bash
-copilot -p "@src/utils/validation.js Generate Jest tests with edge cases"
+copilot -p "@samples/src/utils/helpers.js Generate Jest tests with edge cases"
 ```
 
 ### Debugging
 
 ```bash
 copilot
-> @src/api/payments.js Users report $10.20 + $5.10 shows as $15.299999
+> @samples/buggy-code/js/paymentProcessor.js Users report $10.20 + $5.10 shows as $15.299999
 > Debug why this happens
 ```
 

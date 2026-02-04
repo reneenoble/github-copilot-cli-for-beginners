@@ -113,6 +113,12 @@ The Task agent uses a faster model since it's focused on command execution rathe
 
 ---
 
+# Part 2: Creating Custom Agents
+
+> 💡 **This section is optional.** The built-in agents (`/plan`, `/review`) are powerful enough for most workflows. Create custom agents when you need specialized expertise that's consistently applied across your work.
+
+---
+
 ## Creating Your First Agent
 
 Agents can be defined in several locations. Choose based on your use case:
@@ -208,7 +214,6 @@ You are a frontend development specialist with expertise in React, TypeScript, a
 | `description` | **Yes** | What the agent does - helps Copilot understand when to suggest it |
 | `tools` | No | List of allowed tools (omit = all tools available). See tool aliases below. |
 | `target` | No | Limit to `vscode` or `github-copilot` only |
-| `infer` | No | If `false`, agent must be manually selected (defaults to `true`) |
 
 **Tool Aliases**: Use these names in the `tools` list:
 - `read` - Read file contents
@@ -218,9 +223,9 @@ You are a frontend development specialist with expertise in React, TypeScript, a
 - `web` - Fetch web content
 - `agent` - Invoke other custom agents
 
-> 💡 **Note**: The `model` property works in VS Code but is not yet supported in Copilot CLI. Unrecognized properties are ignored for compatibility.
->
 > 📖 **Official docs**: [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+>
+> ⚠️ **VS Code Only**: The `model` property (for selecting AI models) works in VS Code but is not supported in Copilot CLI. You can safely include it for cross-platform agent files. Copilot CLI will ignore it.
 
 ### Using the Agent
 
@@ -718,13 +723,13 @@ EOF
 
 # Now use them
 copilot --agent reviewer
-> Review @src/utils.js
+> Review @samples/src/utils/helpers.js
 
 # Or switch agents
 copilot
 > /agent
 # Select "documentor"
-> Document @src/utils.js
+> Document @samples/src/utils/helpers.js
 ```
 
 ### Example 2: Agent-Driven Feature Development
