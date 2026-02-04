@@ -135,6 +135,20 @@ copilot
 
 ## Workflow 2: Refactoring
 
+### Simple Refactoring
+
+Start with straightforward improvements. Try these on the sample file:
+
+```bash
+copilot
+
+> @samples/src/refactor-me.js Rename the variable 'x' to something more descriptive
+> @samples/src/refactor-me.js The processOrder function is too long. Split it into smaller functions.
+> @samples/src/refactor-me.js Remove any unused variables
+```
+
+> 💡 **New to refactoring?** Start with simple requests like renaming variables or removing duplication before tackling complex transformations.
+
 ### Callback to Async/Await
 
 ```bash
@@ -191,6 +205,25 @@ copilot
 ---
 
 ## Workflow 3: Debugging
+
+### Simple Debugging
+
+Start by describing what's wrong. Use these patterns with any file you're debugging:
+
+```bash
+copilot
+
+# Pattern: "Expected X but got Y"
+> @your-file.js This function should return true, but it's returning false. Why?
+
+# Pattern: "Error message + location"
+> @your-file.js I'm getting "undefined is not a function" on line 15. What's wrong?
+
+# Pattern: "Unexpected behavior"
+> @your-file.js The loop never ends. Help me find why.
+```
+
+> 💡 **Debugging tip**: Describe the *symptom* (what you see) and the *expectation* (what should happen). Copilot figures out the rest.
 
 ### The "Bug Detective" - AI Finds RELATED Bugs
 

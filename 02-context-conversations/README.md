@@ -43,7 +43,27 @@ This section covers everything you need to work effectively with context. Master
 
 ## The @ Syntax
 
-The `@` symbol references files and directories in your prompts. Here are the patterns you'll use most often:
+The `@` symbol references files and directories in your prompts. It's how you tell Copilot "look at this file."
+
+### Try It Now (No Setup Required)
+
+You can try this with any file on your computer:
+
+```bash
+copilot
+
+# Point at any file you have
+> Explain what @package.json does
+> Summarize @README.md
+> What's in @.gitignore and why?
+```
+
+> 💡 **Don't have a project handy?** Create a quick test file:
+> ```bash
+> echo "function greet(name) { return 'Hello ' + name; }" > test.js
+> copilot
+> > What does @test.js do?
+> ```
 
 ### Basic @ Patterns
 

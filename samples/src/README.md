@@ -22,7 +22,8 @@ src/
 │   └── userService.js
 ├── utils/         # Helper functions
 │   └── helpers.js
-└── index.js       # App entry point
+├── index.js       # App entry point
+└── refactor-me.js # Beginner refactoring practice (Chapter 03)
 ```
 
 ## Usage
@@ -35,6 +36,18 @@ copilot
 > Explain what @samples/src/utils/helpers.js does
 > Review @samples/src/api/ for security issues
 > Compare @samples/src/auth/login.js and @samples/src/auth/register.js
+```
+
+## Refactoring Practice
+
+The `refactor-me.js` file is specifically designed for Chapter 03's refactoring exercises:
+
+```bash
+copilot
+
+> @samples/src/refactor-me.js Rename the variable 'x' to something more descriptive
+> @samples/src/refactor-me.js This function is too long. Split it into smaller functions.
+> @samples/src/refactor-me.js Remove any unused variables
 ```
 
 ## Notes

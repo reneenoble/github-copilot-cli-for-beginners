@@ -42,13 +42,11 @@ Notice how natural it feels. Just ask questions like you would to a colleague. W
 
 **The key insight**: Copilot CLI is conversational. You don't need special syntax to get started. Just ask questions in plain English.
 
----
-
 ## See It In Action
 
 Now let's see why developers are calling this "having a senior engineer on speed dial."
 
-> 📖 **Reading the Examples**: Lines starting with `>` are prompts you type inside an interactive Copilot session. Lines without a prefix are shell commands you run in your terminal.
+> 📖 **Reading the Examples**: Lines starting with `>` are prompts you type inside an interactive Copilot session. Lines without a `>` prefix are shell commands you run in your terminal.
 
 ### Demo 1: Security Scan in Seconds
 
@@ -250,13 +248,13 @@ Available commands:
 copilot
 
 # In the session:
-> Create a Python class for managing a todo list
-> Add a method to mark items as complete
-> Add persistence using JSON file storage
+> Write a function that greets someone by name
+> Now make it return the greeting instead of printing it
+> Add a default name of "World" if no name is given
 > /exit
 ```
 
-Notice how each prompt builds on the previous answer.
+Notice how each prompt builds on the previous answer. You're having a conversation, not starting over each time.
 
 ---
 
@@ -271,14 +269,7 @@ Plan mode shows you a step-by-step plan before writing any code. Use the `/plan`
 ```bash
 copilot
 
-> /plan Create a REST API for a blog with posts and comments using [Your_Language/Framework]
-```
-
-> 💡 **Replace `[Your_Language/Framework]`** with your preference, e.g., "Node.js with Express", "Python with FastAPI", "C# with ASP.NET Core", etc.
-
-```bash
-# Example with specific framework:
-> /plan Create a REST API for a blog with posts and comments using Node.js with Express
+> /plan Create a simple todo list program
 ```
 
 **Plan mode output:**
@@ -286,35 +277,25 @@ copilot
 ```
 📋 Implementation Plan
 
-Step 1: Set up Express server
-  - Initialize package.json
-  - Install express, cors, body-parser
-  - Create server.js with basic configuration
+Step 1: Create the data structure
+  - Array to store todo items
+  - Each item has: id, text, completed status
 
-Step 2: Create data models
-  - Post model (id, title, content, createdAt)
-  - Comment model (id, postId, author, content, createdAt)
+Step 2: Implement core functions
+  - addTodo(text) - Add a new item
+  - completeTodo(id) - Mark item as done
+  - listTodos() - Show all items
 
-Step 3: Implement POST endpoints
-  - POST /api/posts - Create new post
-  - POST /api/posts/:id/comments - Add comment to post
-
-Step 4: Implement GET endpoints
-  - GET /api/posts - List all posts
-  - GET /api/posts/:id - Get single post with comments
-
-Step 5: Implement UPDATE/DELETE
-  - PUT /api/posts/:id - Update post
-  - DELETE /api/posts/:id - Delete post and its comments
-
-Step 6: Add error handling
-  - Validation middleware
-  - Error response formatting
+Step 3: Add display formatting
+  - Show ✓ for completed items
+  - Show numbered list
 
 Proceed with implementation? [Y/n]
 ```
 
-**Key insight**: Plan mode lets you review and modify the approach before any code is written. Perfect for complex features.
+**Key insight**: Plan mode lets you review and modify the approach before any code is written. You see exactly what Copilot will do before it does it.
+
+> 💡 **Want something more complex?** Try: `/plan Create a REST API for a blog` - Plan mode scales from simple scripts to full applications.
 
 ---
 
@@ -326,25 +307,28 @@ Use the `-p` flag for one-time commands that don't need interaction:
 
 ```bash
 # Generate code
-copilot -p "Write a Python function to validate credit card numbers using the Luhn algorithm"
+copilot -p "Write a function that checks if a number is even or odd"
+
+# Explain something
+copilot -p "Explain what a for loop does"
+
+# Get quick help
+copilot -p "How do I read a file in Python?"
 ```
 
 <details>
 <summary>🎬 See it in action!</summary>
 
-![Luhn Algorithm Demo](images/luhn-algorithm-demo.gif)
+![Programmatic Mode Demo](images/luhn-algorithm-demo.gif)
 
 </details>
 
-```bash
-# Explain something
-copilot -p "Explain the difference between let and const in JavaScript"
+**Key insight**: Programmatic mode gives you a quick answer and exits. No conversation, just input → output.
 
-# Review a file
-copilot -p "Review @myfile.js for performance issues"
-```
+<details>
+<summary>📚 <strong>Advanced: Using Programmatic Mode in Scripts</strong> (click to expand)</summary>
 
-#### Programmatic Mode in Scripts
+Once you're comfortable, you can use `-p` in shell scripts:
 
 ```bash
 #!/bin/bash
@@ -353,14 +337,11 @@ copilot -p "Review @myfile.js for performance issues"
 COMMIT_MSG=$(copilot -p "Generate a commit message for: $(git diff --staged)")
 git commit -m "$COMMIT_MSG"
 
-# Generate documentation
-copilot -p "Generate JSDoc comments for @src/utils.js" > docs/utils.md
-
-# Security scan before deploy
-copilot -p "Security review of @src/ - list critical issues only"
+# Review a file
+copilot -p "Review @myfile.js for issues"
 ```
 
-**Key insight**: Programmatic mode is perfect for automation. No interaction needed - just input and output.
+</details>
 
 ---
 
