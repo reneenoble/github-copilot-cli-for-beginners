@@ -127,7 +127,7 @@ npm run generate:pdf      # Generates PDF from markdown
 
 - 🐛 **Found a bug?** [Open an Issue](https://github.com/github/github-copilot-cli-for-beginners/issues)
 - 🤝 **Want to contribute?** PRs welcome!
-- 📚 **Official Docs:** [GitHub Copilot CLI Documentation](https://docs.github.com/copilot)
+- 📚 **Official Docs:** [GitHub Copilot CLI Documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli)
 
 ## Start Learning
 

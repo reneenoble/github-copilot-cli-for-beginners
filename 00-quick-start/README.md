@@ -170,7 +170,7 @@ copilot
 
 ### Still stuck?
 
-- Check the [GitHub Copilot CLI documentation](https://docs.github.com/copilot)
+- Check the [GitHub Copilot CLI documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli)
 - Search [GitHub Issues](https://github.com/github/copilot-cli/issues)
 
 ---

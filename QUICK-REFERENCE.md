@@ -42,6 +42,7 @@
 | `/share` | Export session as markdown or GitHub gist |
 | `/rename` | Rename the current session |
 | `/resume` | Switch to a different session |
+| `/tasks` | View background subagents and detached shell sessions |
 
 ### Permissions
 

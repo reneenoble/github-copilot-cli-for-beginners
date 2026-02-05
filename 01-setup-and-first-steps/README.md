@@ -382,6 +382,7 @@ That's it for getting started! As you become comfortable, you can explore additi
 | `/share` | Export session as markdown file or GitHub gist |
 | `/rename` | Rename the current session |
 | `/resume` | Switch to a different session |
+| `/tasks` | View background subagents and detached shell sessions |
 
 ### Directory Access
 
