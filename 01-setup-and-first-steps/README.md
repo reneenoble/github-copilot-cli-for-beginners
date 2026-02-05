@@ -54,7 +54,7 @@ The course includes sample files with intentional bugs. Let's scan one:
 
 ```bash
 # Clone the course repository (if you haven't already)
-git clone https://github.com/microsoft/github-copilot-cli-for-beginners
+git clone https://github.com/github/github-copilot-cli-for-beginners
 cd github-copilot-cli-for-beginners
 
 # Start Copilot

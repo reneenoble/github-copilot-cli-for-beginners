@@ -127,7 +127,8 @@ Once you've built a basic server, you can:
 
 ## Resources
 
-- [MCP SDK Documentation](https://github.com/modelcontextprotocol/sdk)
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Example MCP Servers](https://github.com/modelcontextprotocol/servers)
 
 ---

@@ -358,7 +358,7 @@ done
 
 ## Resources
 
-- [GitHub Copilot CLI for Beginners Course Repository](https://github.com/microsoft/github-copilot-cli-for-beginners)
+- [GitHub Copilot CLI for Beginners Course Repository](https://github.com/github/github-copilot-cli-for-beginners)
 - [GitHub Copilot CLI Docs](https://docs.github.com/en/copilot)
 - [MCP Server Registry](https://github.com/modelcontextprotocol/servers)
 
