@@ -332,7 +332,40 @@ Common cleanup scenarios:
 
 ---
 
-## Issue to Fix to PR: Without Leaving Terminal
+## Complete Configuration File
+
+Here's a full `mcp-config.json` with filesystem and Context7 servers:
+
+> 💡 **Note:** GitHub MCP is built-in - you don't need to add it to your config file. It uses your `/login` authentication automatically.
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "tools": ["*"]
+    },
+    "context7": {
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+Save this as `~/.copilot/mcp-config.json` for global access or `.copilot/mcp-config.json` for project-specific configuration.
+
+---
+
+## Putting MCP to Work: Real Workflows
+
+Now that you have MCP configured, let's see what it can do. These workflows demonstrate why developers say "I never want to work without this again."
+
+### Issue to Fix to PR: Without Leaving Terminal
 
 This is the moment developers say "I never want to work without this again."
 
@@ -492,38 +525,9 @@ copilot
 
 ---
 
-## Complete Configuration File
-
-Here's a full `mcp-config.json` with filesystem and Context7 servers:
-
-> 💡 **Note:** GitHub MCP is built-in - you don't need to add it to your config file. It uses your `/login` authentication automatically.
-
-```json
-{
-  "mcpServers": {
-    "filesystem": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
-      "tools": ["*"]
-    },
-    "context7": {
-      "type": "local",
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "tools": ["*"]
-    }
-  }
-}
-```
-
-Save this as `~/.copilot/mcp-config.json` for global access or `.copilot/mcp-config.json` for project-specific configuration.
-
----
-
 ## Web Access with web_fetch
 
-Copilot CLI includes a built-in `web_fetch` tool that can retrieve content from URLs. You can control which URLs are accessible via your configuration:
+GitHub Copilot CLI includes a built-in `web_fetch` tool that can retrieve content from URLs. You can control which URLs are accessible via your configuration:
 
 ```json
 // ~/.copilot/config.json
@@ -703,7 +707,7 @@ copilot
 
 ## 🔮 Also Available: Plugins
 
-Copilot CLI also supports a **plugin system** for installing community extensions:
+GitHub Copilot CLI also supports a **plugin system** for installing community extensions:
 
 | Command | Purpose |
 |---------|---------|

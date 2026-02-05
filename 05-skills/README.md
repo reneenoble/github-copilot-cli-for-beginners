@@ -62,6 +62,22 @@ copilot
 
 > **Ready-to-use templates**: Check out the [samples/skills](../samples/skills/) folder for copy-paste skills you can use immediately.
 
+### Coming from Chapter 04? Agents vs Skills
+
+If you just learned about agents, here's how skills differ:
+
+| | Agents | Skills |
+|---|---|---|
+| **Analogy** | Hiring a specialist (frontend expert) | Giving someone a detailed checklist |
+| **Invocation** | **Manual** - `/agent` or `--agent name` | **Automatic** - matches your prompt |
+| **Best for** | Broad expertise (frontend, security) | Specific tasks (code review checklist) |
+
+**The key insight**: An agent is *who* is helping you (expertise). A skill is *what procedure* they follow (consistency).
+
+**Pro tip**: Combine both for maximum power! A security agent using your security-audit skill.
+
+> 📖 For a detailed comparison, see the [Preview: Agents vs Skills](../04-agents-custom-instructions/README.md#preview-agents-vs-skills) section in Chapter 04.
+
 ### Direct Slash Command Invocation
 
 While auto-triggering is the primary way skills work, you can also **invoke skills directly** using their name as a slash command:
@@ -96,7 +112,7 @@ You can ask Copilot directly:
 
 <img src="images/skills-agents-mcp-comparison.png" alt="Comparison diagram showing the differences between Agents, Skills, and MCP Servers and how they combine into your workflow" width="800"/>
 
-*Three ways to extend Copilot CLI: Agents change how it thinks, Skills provide task-specific instructions, MCP connects to external services*
+*Three ways to extend GitHub Copilot CLI: Agents change how it thinks, Skills provide task-specific instructions, MCP connects to external services*
 
 | Feature | What It Does | When to Use |
 |---------|--------------|-------------|
@@ -105,19 +121,6 @@ You can ask Copilot directly:
 | **MCP** | Connects external services | Need live data from APIs |
 
 **Quick rule**: Use agents for broad expertise, skills for specific task instructions, and MCP for external data.
-
-### Quick Refresher: Agents vs Skills
-
-> 📖 For a detailed comparison, see the [Preview: Agents vs Skills](../04-agents-custom-instructions/README.md#preview-agents-vs-skills) section in Chapter 04.
-
-**The key insight**: An agent is *who* is helping you (expertise). A skill is *what procedure* they follow (consistency).
-
-| | Agents | Skills |
-|---|---|---|
-| **Invocation** | **Manual** - `/agent` or `--agent name` | **Automatic** - matches your prompt |
-| **Best for** | Broad expertise (frontend, security) | Specific tasks (code review checklist) |
-
-**Pro tip**: Combine both for maximum power! A security agent using your security-audit skill.
 
 > 📚 **Learn More**: See the official [About Agent Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) documentation for the complete reference on skill formats and best practices.
 
@@ -444,7 +447,7 @@ When reviewing code, check for:
 - Sensitive data exposure
 
 ## Performance
-- N+1 query problems
+- N+1 query problems (running one query per item instead of one query for all items)
 - Unnecessary loops or computations
 - Memory leaks
 - Blocking operations
@@ -856,7 +859,7 @@ Ask Copilot directly:
 2. **Direct invocation**: You can also invoke skills directly with `/skill-name` as a slash command
 3. **SKILL.md format**: YAML frontmatter (name, description, optional license) plus markdown instructions
 4. **Locations matter**: `.github/skills/` for team sharing, `~/.copilot/skills/` for personal use
-5. **Cross-platform**: Same skill format works in Copilot CLI, VS Code, and Claude Code
+5. **Cross-platform**: Same skill format works in GitHub Copilot CLI, VS Code, and Claude Code
 6. **Description is key**: Write descriptions that match how you naturally ask questions
 
 > 📋 **Quick Reference**: See the [Command Cheat Sheet](../QUICK-REFERENCE.md) for a complete list of commands and shortcuts.

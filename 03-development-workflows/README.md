@@ -28,7 +28,7 @@ A master carpenter doesn't just know how to use tools - they have *workflows* fo
 | Fixing damage | Assess → Remove → Repair → Match |
 | Quality check | Inspect → Test joints → Check alignment |
 
-Similarly, developers have workflows for different tasks. Copilot CLI enhances each one.
+Similarly, developers have workflows for different tasks. GitHub Copilot CLI enhances each one.
 
 > 💡 **Important**: The workflows below are **independent tools**, not a mandatory sequence. Use whichever workflow fits your current task. You might do code review without debugging, or jump straight to test generation. There's no "correct" order.
 >
@@ -40,7 +40,7 @@ Similarly, developers have workflows for different tasks. Copilot CLI enhances e
 
 <img src="images/five-workflows-swimlane.png" alt="Five Development Workflows: Code Review, Refactoring, Debugging, Test Generation, and Git Integration shown as horizontal swimlanes" width="800"/>
 
-*Each workflow follows a clear progression of steps, all enhanced by Copilot CLI*
+*Each workflow follows a clear progression of steps, all enhanced by GitHub Copilot CLI*
 
 ---
 
@@ -443,7 +443,8 @@ copilot
 # See what changed
 git diff --staged
 
-# Generate commit message (see [Conventional Commit](../GLOSSARY.md#conventional-commit) format)
+# Generate commit message using [Conventional Commit](../GLOSSARY.md#conventional-commit) format
+# (structured messages like "feat(auth): add login" or "fix(api): handle null input")
 copilot -p "Generate a conventional commit message for: $(git diff --staged)"
 
 # Output: "feat(auth): add JWT refresh token rotation

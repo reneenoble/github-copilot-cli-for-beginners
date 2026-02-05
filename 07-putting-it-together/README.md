@@ -2,9 +2,9 @@
 
 > **Everything you learned combines here. Go from idea to merged PR in a single session.**
 
-In this chapter, you'll bring together everything you've learned into complete workflows. You'll build features using multi-agent collaboration, set up pre-commit hooks that catch security issues before they're committed, integrate Copilot into CI/CD pipelines, and go from feature idea to merged PR in a single terminal session. This is where Copilot CLI becomes a genuine force multiplier.
+In this chapter, you'll bring together everything you've learned into complete workflows. You'll build features using multi-agent collaboration, set up pre-commit hooks that catch security issues before they're committed, integrate Copilot into CI/CD pipelines, and go from feature idea to merged PR in a single terminal session. This is where GitHub Copilot CLI becomes a genuine force multiplier.
 
-> 💡 **Note**: This chapter shows how to combine everything you've learned. **You don't need agents, skills, or MCP to be productive.** If you only completed Chapters 00-03, start with the "Minimal Workflow" section - it covers a complete feature workflow using only built-in features.
+> 💡 **Note**: This chapter shows how to combine everything you've learned. **You don't need agents, skills, or MCP to be productive (although they can be very helpful).** If you only completed Chapters 00-03, start with the [Minimal Workflow](#start-here-minimal-workflow-no-custom-setup-required) section - it covers a complete feature workflow using only built-in features.
 
 ## Learning Objectives
 

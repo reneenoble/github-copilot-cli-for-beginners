@@ -226,7 +226,7 @@ Instructions for the skill...
 
 ## Plugins
 
-Extend Copilot CLI with community plugins:
+Extend GitHub Copilot CLI with community plugins:
 
 | Command | Purpose |
 |---------|---------|

@@ -40,7 +40,7 @@ Try these beginner-friendly prompts:
 
 Notice how natural it feels. Just ask questions like you would to a colleague. When you're done exploring, type `/exit` to leave the session.
 
-**The key insight**: Copilot CLI is conversational. You don't need special syntax to get started. Just ask questions in plain English.
+**The key insight**: GitHub Copilot CLI is conversational. You don't need special syntax to get started. Just ask questions in plain English.
 
 ## See It In Action
 

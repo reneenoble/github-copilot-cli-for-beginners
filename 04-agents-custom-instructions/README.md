@@ -2,6 +2,8 @@
 
 > **What if you could hire a frontend expert, backend expert, and security expert... all in one tool?**
 
+In Chapter 03, you mastered the essential workflows: code review, refactoring, debugging, test generation, and git integration. Those skills make you highly productive with GitHub Copilot CLI. Now, let's take it further.
+
 In this chapter, you'll transform Copilot from a generalist into a team of specialists. You'll create agents with deep domain expertise: a frontend expert who automatically adds accessibility and TypeScript, a backend specialist who enforces security best practices, and more. You'll see how the same prompt produces dramatically better results when a specialist handles it, and learn to orchestrate multiple agents collaborating on a single feature.
 
 ## Learning Objectives
@@ -61,7 +63,7 @@ Agents work the same way. Instead of a generic AI, you get specialists who under
 
 ## Built-in Agents
 
-Copilot CLI includes four built-in agents:
+GitHub Copilot CLI includes four built-in agents:
 
 | Agent | How to Invoke | What It Does |
 |-------|---------------|--------------|
@@ -148,7 +150,9 @@ Do you want this agent everywhere?
 
 ### Agent File Structure
 
-Let's start with a **minimal agent** to understand the format:
+Let's start with a **minimal agent** to understand the format.
+
+> 💡 **New to YAML frontmatter?** Agent files use a format common in many tools: a small block of configuration data (called "frontmatter") at the top of the file, surrounded by `---` markers. This uses YAML syntax, which is just a simple way to write settings as `key: value` pairs. The rest of the file is regular markdown with your instructions.
 
 Create `my-reviewer.agent.md` in your project folder:
 
@@ -225,7 +229,7 @@ You are a frontend development specialist with expertise in React, TypeScript, a
 
 > 📖 **Official docs**: [Custom agents configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
 >
-> ⚠️ **VS Code Only**: The `model` property (for selecting AI models) works in VS Code but is not supported in Copilot CLI. You can safely include it for cross-platform agent files. Copilot CLI will ignore it.
+> ⚠️ **VS Code Only**: The `model` property (for selecting AI models) works in VS Code but is not supported in GitHub Copilot CLI. You can safely include it for cross-platform agent files. GitHub Copilot CLI will ignore it.
 
 ### Using the Agent
 
