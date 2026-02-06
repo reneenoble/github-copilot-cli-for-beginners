@@ -1,0 +1,5 @@
+[project]
+name = "book-app"
+version = "0.1.0"
+minimum-python-version = "3.10"
+dependencies = ["pytest"]

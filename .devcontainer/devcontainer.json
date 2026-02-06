@@ -1,7 +1,22 @@
 {
   "name": "GitHub Copilot CLI for Beginners",
+	"image": "mcr.microsoft.com/devcontainers/python:2-3.13-bullseye",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "npm install -g @githubnext/github-copilot-cli && gh extension install github/gh-copilot"
+    "customizations": {
+      "vscode": {
+          "extensions": [
+            "ms-python.python"
+          ],
+          "settings": {
+              "python.defaultInterpreterPath": "${workspaceFolder}/samples/book_app_python/.venv/bin/python"
+          }
+      }
+  },
+
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && uv sync --frozen --directory samples/book_app_python && gh extension install github/gh-copilo && npm install -g @githubnext/github-copilot-cli"
+  // Add login to github command as part of the flow, or remove the extension installation and ask users to install it themselves after logging in to github
 }
+
+ 
