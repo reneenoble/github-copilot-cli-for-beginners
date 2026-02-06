@@ -266,7 +266,7 @@ Notice how each prompt builds on the previous answer. You're having a conversati
 
 Plan mode shows you a step-by-step plan before writing any code. Use the `/plan` command or press **Shift+Tab** to toggle Plan Mode:
 
-> 💡 **Tip**: You can also press **Shift+Tab** at any time to toggle between regular and plan modes.
+> 💡 **Tip**: **Shift+Tab** is a keyboard shortcut that toggles between regular mode and plan mode. Press it anytime during an interactive session to switch modes without typing a command.
 
 ```bash
 copilot

@@ -36,6 +36,14 @@ A commit message format that follows a standardized structure: `type(scope): des
 
 ---
 
+## F
+
+### Frontmatter
+
+Metadata at the top of a Markdown file enclosed in `---` delimiters. Used in agent and skill files to define properties like `description` and `name` in YAML format.
+
+---
+
 ## G
 
 ### Glob Pattern
@@ -49,6 +57,14 @@ A pattern using wildcards to match file paths (e.g., `*.js` matches all JavaScri
 ### JWT
 
 JSON Web Token. A secure way to transmit authentication information between systems.
+
+---
+
+## N
+
+### npx
+
+A Node.js tool that runs npm packages without installing them globally. Used in MCP server configurations to launch servers (e.g., `npx @modelcontextprotocol/server-filesystem`).
 
 ---
 
@@ -70,9 +86,21 @@ Open Web Application Security Project. An organization that publishes security b
 
 ## P
 
+### Pre-commit Hook
+
+A script that runs automatically before each `git commit`. Can be used to run Copilot security reviews or code quality checks before code is committed.
+
 ### Programmatic Mode
 
 Running Copilot with `-p` flag for single commands without interaction.
+
+---
+
+## R
+
+### Rate Limiting
+
+Restrictions on how many requests you can make to an API within a time period. Copilot may temporarily limit responses if you exceed your plan's usage quota.
 
 ---
 
@@ -97,6 +125,14 @@ Commands starting with `/` that control Copilot (e.g., `/help`, `/clear`, `/mode
 ### Token
 
 A unit of text that AI models process. Roughly 4 characters or 0.75 words. Used to measure both input (your prompts and context) and output (AI responses).
+
+---
+
+## Y
+
+### YAML
+
+YAML Ain't Markup Language. A human-readable data format used for configuration. In this course, YAML appears in agent and skill frontmatter (the `---` delimited block at the top of `.agent.md` and `SKILL.md` files).
 
 ---
 

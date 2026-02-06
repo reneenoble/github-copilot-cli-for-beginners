@@ -120,7 +120,9 @@ You can ask Copilot directly:
 
 ### Using Plugins to Install Skills
 
-The `/plugin` command provides access to a marketplace of community extensions, including skills, agents, and MCP servers:
+> 💡 **What are plugins?** Plugins are installable packages that can bundle skills, agents, and MCP server configurations together. Think of them as "app store" extensions for Copilot CLI.
+
+The `/plugin` command lets you browse and install these packages:
 
 ```bash
 copilot

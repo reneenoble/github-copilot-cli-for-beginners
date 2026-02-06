@@ -294,6 +294,7 @@ Context7 gives Copilot access to up-to-date documentation for popular frameworks
 ✅ **No API key required** - Context7 works out of the box
 ✅ **No account needed** - Just add the configuration
 ✅ **Automatic updates** - Documentation is fetched in real-time
+✅ **Your code stays local** - Context7 fetches public library documentation; your project files are not sent to their servers
 
 **That's it!** Once configured, Copilot automatically uses Context7 when you ask about frameworks or libraries.
 
@@ -529,7 +530,9 @@ copilot
 
 ## Web Access with web_fetch
 
-GitHub Copilot CLI includes a built-in `web_fetch` tool that can retrieve content from URLs. You can control which URLs are accessible via your configuration:
+GitHub Copilot CLI includes a built-in `web_fetch` tool that can retrieve content from URLs. You can control which URLs are accessible via your configuration.
+
+> 💡 **Note**: This uses `~/.copilot/config.json` (general Copilot settings), which is separate from `~/.copilot/mcp-config.json` (MCP server definitions).
 
 In `~/.copilot/config.json`:
 

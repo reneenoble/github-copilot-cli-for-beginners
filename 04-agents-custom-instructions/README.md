@@ -779,7 +779,9 @@ For more community agents, see [github/awesome-copilot](https://github.com/githu
 
 ### Main Challenge: Build Your Team
 
-1. Create an `AGENTS.md` file with at least 3 agents relevant to a project you work on
+1. Create at least 3 agents relevant to a project you work on. You can either:
+   - Create individual `.agent.md` files (one per agent, as shown earlier in the chapter), **or**
+   - Define them all in a single `AGENTS.md` file (see the hint below for a template)
 2. Each agent should have:
    - Clear expertise area
    - Specific code standards

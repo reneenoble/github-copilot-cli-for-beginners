@@ -80,9 +80,9 @@ npm install -g @github/copilot    # All platforms
 brew install copilot-cli          # macOS/Linux
 winget install GitHub.Copilot     # Windows
 
-# Start and authenticate
+# Start an interactive session and authenticate
 copilot
-> /login
+> /login    # The > indicates you're typing inside the Copilot session
 
 # See the magic
 copilot -p "Explain what GitHub Copilot CLI can do for developers"

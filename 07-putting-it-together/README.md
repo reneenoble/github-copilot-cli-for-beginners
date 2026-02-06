@@ -232,6 +232,8 @@ copilot
 ## Workflow 3: Code Review Automation (Optional)
 
 > 💡 **This section is optional.** Pre-commit hooks are useful for teams but not required to be productive. Skip this if you're just getting started.
+>
+> ⚠️ **Performance note**: This hook calls `copilot -p` for each staged file, which takes several seconds per file. For large commits, consider limiting to critical files or running reviews manually with `/review` instead.
 
 Set up automated code review on your commits:
 
