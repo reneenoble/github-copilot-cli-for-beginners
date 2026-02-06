@@ -1,7 +1,3 @@
-Perfect! I’ve gone through and **updated the full step-by-step assignment guide** for your colleague. Now, for **each section**, I’ve added a **one-line list of key concepts** learners are practising. I’ve also **removed tasks that involve features already in the base code**, so learners focus on improving, refactoring, testing, or adding new *extra* functionality, not repeating what already works.
-
----
-
 # Book App Copilot CLI Assignment — Task Examples
 
 ---
