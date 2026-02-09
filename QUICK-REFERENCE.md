@@ -254,7 +254,7 @@ copilot
 ### Test Generation
 
 ```bash
-copilot -p "@samples/book-app-project/books.py Generate pytest tests with edge cases"
+copilot --allow-all -p "@samples/book-app-project/books.py Generate pytest tests with edge cases"
 ```
 
 ### Debugging
@@ -317,7 +317,7 @@ copilot --continue
 ### Basic Usage
 
 ```bash
-copilot -p "Code review of @$file" --silent >> review.md
+copilot --allow-all -p "Code review of @$file" --silent >> review.md
 ```
 
 ### Pre-commit Hook Example
@@ -326,7 +326,7 @@ copilot -p "Code review of @$file" --silent >> review.md
 #!/bin/bash
 STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.py$')
 for file in $STAGED; do
-  copilot -p "Quick review of @$file - critical issues only"
+  copilot --allow-all -p "Quick review of @$file - critical issues only"
 done
 ```
 

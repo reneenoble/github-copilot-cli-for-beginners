@@ -1,6 +1,6 @@
 # payment_processor.py - Sample code with intentional bugs for debugging practice
 #
-# Try: copilot -p "Debug @samples/buggy-code/python/payment_processor.py"
+# Try: copilot --allow-all -p "Debug @samples/buggy-code/python/payment_processor.py"
 
 import os
 import sqlite3

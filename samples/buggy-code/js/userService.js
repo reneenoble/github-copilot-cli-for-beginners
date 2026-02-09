@@ -2,8 +2,8 @@
 // Use this file to practice code review and debugging with GitHub Copilot CLI
 //
 // Try these commands:
-//   copilot -p "Review @samples/buggy-code/js/userService.js for security issues"
-//   copilot -p "Find all bugs in @samples/buggy-code/js/userService.js"
+//   copilot --allow-all -p "Review @samples/buggy-code/js/userService.js for security issues"
+//   copilot --allow-all -p "Find all bugs in @samples/buggy-code/js/userService.js"
 
 const db = require('./db');
 

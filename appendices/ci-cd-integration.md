@@ -52,7 +52,7 @@ jobs:
             echo "" >> review.md
             
             # Use --silent to suppress progress output
-            copilot -p "Quick security and quality review of @$file. List only critical issues." --silent >> review.md 2>/dev/null || echo "Review skipped" >> review.md
+            copilot --allow-all -p "Quick security and quality review of @$file. List only critical issues." --silent >> review.md 2>/dev/null || echo "Review skipped" >> review.md
             echo "" >> review.md
           done
 
@@ -86,10 +86,10 @@ You can focus the review on specific types of issues:
 
 ```yaml
 # Security-only review
-copilot -p "Security review of @$file. Check for: SQL injection, XSS, hardcoded secrets, authentication issues." --silent
+copilot --allow-all -p "Security review of @$file. Check for: SQL injection, XSS, hardcoded secrets, authentication issues." --silent
 
 # Performance-only review
-copilot -p "Performance review of @$file. Check for: N+1 queries, memory leaks, blocking operations." --silent
+copilot --allow-all -p "Performance review of @$file. Check for: N+1 queries, memory leaks, blocking operations." --silent
 ```
 
 ### Handling Large PRs
@@ -101,7 +101,7 @@ For PRs with many files, consider batching or limiting:
 FILES=$(git diff --name-only origin/main...HEAD | grep -E '\.(js|ts)$' | head -10)
 
 # Or set a timeout per file
-timeout 60 copilot -p "Review @$file" --silent || echo "Review timed out"
+timeout 60 copilot --allow-all -p "Review @$file" --silent || echo "Review timed out"
 ```
 
 ### Team Configuration
@@ -179,7 +179,7 @@ permissions:
 Increase timeout or reduce scope:
 
 ```bash
-timeout 120 copilot -p "Quick review of @$file - critical issues only" --silent
+timeout 120 copilot --allow-all -p "Quick review of @$file - critical issues only" --silent
 ```
 
 ### Token limits in large files
@@ -188,7 +188,7 @@ Skip very large files:
 
 ```bash
 if [ $(wc -l < "$file") -lt 500 ]; then
-  copilot -p "Review @$file" --silent
+  copilot --allow-all -p "Review @$file" --silent
 else
   echo "Skipping $file (too large)"
 fi

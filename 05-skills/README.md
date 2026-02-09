@@ -755,10 +755,10 @@ copilot
 3. **Compare with/without**: Try the same prompt with `--no-custom-instructions` to see the difference:
    ```bash
    # With skills
-   copilot -p "Review @file.py for security issues"
+   copilot --allow-all -p "Review @file.py for security issues"
 
    # Without skills (baseline comparison)
-   copilot -p "Review @file.py for security issues" --no-custom-instructions
+   copilot --allow-all -p "Review @file.py for security issues" --no-custom-instructions
    ```
 4. **Check for specific checks**: If your skill includes specific checks (like "functions over 50 lines"), see if those appear in the output
 

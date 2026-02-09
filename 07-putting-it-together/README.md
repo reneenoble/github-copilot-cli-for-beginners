@@ -247,7 +247,7 @@ if [ -n "$STAGED" ]; then
     echo "Reviewing $file..."
 
     # Use timeout to prevent hanging (60 seconds per file)
-    REVIEW=$(timeout 60 copilot -p "Quick security review of @$file - critical issues only" 2>/dev/null)
+    REVIEW=$(timeout 60 copilot --allow-all -p "Quick security review of @$file - critical issues only" 2>/dev/null)
 
     # Check if timeout occurred
     if [ $? -eq 124 ]; then

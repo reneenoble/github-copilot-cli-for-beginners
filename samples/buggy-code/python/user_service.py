@@ -2,8 +2,8 @@
 # Use this file to practice code review and debugging with GitHub Copilot CLI
 #
 # Try these commands:
-#   copilot -p "Review @samples/buggy-code/python/user_service.py for security issues"
-#   copilot -p "Find all bugs in @samples/buggy-code/python/user_service.py"
+#   copilot --allow-all -p "Review @samples/buggy-code/python/user_service.py for security issues"
+#   copilot --allow-all -p "Find all bugs in @samples/buggy-code/python/user_service.py"
 
 import sqlite3
 import hashlib

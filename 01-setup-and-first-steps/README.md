@@ -331,8 +331,9 @@ COMMIT_MSG=$(copilot -p "Generate a commit message for: $(git diff --staged)")
 git commit -m "$COMMIT_MSG"
 
 # Review a file
-copilot -p "Review @myfile.py for issues"
+copilot --allow-all -p "Review @myfile.py for issues"
 ```
+> ⚠️ **About `--allow-all`**: This flag skips all permission prompts, letting Copilot read files, run commands, and access URLs without asking first. This is necessary for programmatic mode (`-p`) since there's no interactive session to approve actions. Only use `--allow-all` with prompts you've written yourself and in directories you trust. Never use it with untrusted input or in sensitive directories.
 
 </details>
 
@@ -508,8 +509,6 @@ Get-ChildItem samples/book-app-project/*.py | ForEach-Object {
   copilot --allow-all -p "Quick code quality review of @$relativePath - critical issues only" 
 }
 ```
-
-> ⚠️ **About `--allow-all`**: This flag skips all permission prompts, letting Copilot read files, run commands, and access URLs without asking first. This is necessary for programmatic mode (`-p`) since there's no interactive session to approve actions. Only use `--allow-all` with prompts you've written yourself and in directories you trust. Never use it with untrusted input or in sensitive directories.
 
 ---
 

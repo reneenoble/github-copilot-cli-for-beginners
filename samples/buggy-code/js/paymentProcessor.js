@@ -1,6 +1,6 @@
 // paymentProcessor.js - Sample code with intentional bugs for debugging practice
 //
-// Try: copilot -p "Debug @samples/buggy-code/js/paymentProcessor.js"
+// Try: copilot --allow-all -p "Debug @samples/buggy-code/js/paymentProcessor.js"
 
 const stripe = require('stripe');
 
