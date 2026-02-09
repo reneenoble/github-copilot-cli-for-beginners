@@ -71,34 +71,6 @@ Before starting, ensure you have:
 ✅ **Terminal basics**: Comfortable with `cd`, `ls`, running commands<br>
 ✅ **Python 3.10+**: For running the sample book app (pre-installed in Codespaces)
 
-## Quick Start
-
-### Fastest: Open in Codespaces (Recommended)
-
-This repo includes a dev container with Python, pytest, and Copilot CLI pre-installed:
-
-1. [Fork this repository](https://github.com/github/github-copilot-cli-for-beginners/fork)
-2. Click **Code** > **Codespaces** > **Create codespace on main**
-3. Run: `cd samples/book-app-project && python book_app.py list`
-
-### Alternative: Local Install
-
-```bash
-# Install (choose one)
-npm install -g @github/copilot    # All platforms
-brew install copilot-cli          # macOS/Linux
-winget install GitHub.Copilot     # Windows
-
-# Start an interactive session and authenticate
-copilot
-> /login    # The > indicates you're typing inside the Copilot session
-
-# See the magic - ask about the sample book app
-copilot -p "What does @samples/book-app-project/book_app.py do?"
-```
-
-Want more details? Head to [Chapter 00](./00-quick-start/README.md) for the full quick start experience.
-
 ## How This Course Works
 
 Each chapter follows the same pattern:
@@ -117,21 +89,6 @@ Need a cheat sheet? The **[Quick Reference Card](./QUICK-REFERENCE.md)** has all
 
 A PDF version is also available: [QUICK-REFERENCE.pdf](./QUICK-REFERENCE.pdf)
 
-### Keeping It Updated
-
-The Quick Reference can be automatically updated using Copilot CLI itself:
-
-```bash
-npm install
-
-# Update content by scanning docs with Copilot, then generate PDF
-npm run refresh
-
-# Or run steps separately:
-npm run update:reference  # Uses Copilot CLI to scan docs and update content
-npm run generate:pdf      # Generates PDF from markdown
-```
-
 ## Getting Help
 
 - 🐛 **Found a bug?** [Open an Issue](https://github.com/github/github-copilot-cli-for-beginners/issues)
@@ -148,9 +105,7 @@ Ready? Let's see what GitHub Copilot CLI can do!
 
 ## Glossary
 
-Quick reference for technical terms used throughout this course. Don't worry about memorizing these now - refer back as needed.
+Quick reference for technical terms used throughout this course. Don't worry about memorizing these now, refer to it as needed.
 
 **[View Full Glossary →](./GLOSSARY.md)**
-
-Key terms: [Agent](./GLOSSARY.md#agent) | [Context Window](./GLOSSARY.md#context-window) | [Dataclass](./GLOSSARY.md#dataclass) | [Token](./GLOSSARY.md#token) | [MCP](./GLOSSARY.md#mcp) | [Skill](./GLOSSARY.md#skill) | [PEP 8](./GLOSSARY.md#pep-8) | [pytest](./GLOSSARY.md#pytest)
 
