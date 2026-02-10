@@ -2,9 +2,9 @@
 
 > **What if you could hire a Python code reviewer, testing expert, and security reviewer... all in one tool?**
 
-In Chapter 03, you mastered the essential workflows: code review, refactoring, debugging, test generation, and git integration. Those skills make you highly productive with GitHub Copilot CLI. Now, let's take it further.
+In Chapter 03, you mastered the essential workflows: code review, refactoring, debugging, test generation, and git integration. Those make you highly productive with GitHub Copilot CLI. Now, let's take it further.
 
-So far, you've been using Copilot CLI as a general-purpose assistant, but by leveraging agents we can leverage specific skills sets when they are needed. In this chapter, you'll set up specialized agents, such as a code reviewer that enforces type hints and PEP 8 and a testing helper that writes pytest cases. You will get to see how the same prompt gets noticeably better results when a handled by an agent with specific, targetted instructions.
+So far, you've been using Copilot CLI as a general-purpose assistant. Agents let you give it a specific persona with built-in standards — like a code reviewer that enforces type hints and PEP 8, or a testing helper that writes pytest cases. You'll see how the same prompt gets noticeably better results when handled by an agent with targeted instructions.
 
 ## Learning Objectives
 
@@ -131,8 +131,9 @@ copilot --agent python-reviewer
 | **Explore** | *Automatic* | Used internally when you ask Copilot to explore or analyze the codebase |
 | **Task** | *Automatic* | Executes commands like tests, builds, lints, and dependency installs |
 
-<br><details>
-<summary><strong>Using Built-in Agents</strong> - Examples of invoking Plan, Code-review, Explore, and Task</summary>
+<br>
+
+**Built-in agents in action** - Examples of invoking Plan, Code-review, Explore, and Task
 
 ```bash
 copilot
@@ -148,38 +149,19 @@ copilot
 > Explore how book data is loaded    # Uses Explore agent
 ```
 
-**Key insight**: You directly invoke Plan and Code-review with slash commands. Explore and Task work behind the scenes. Copilot uses them automatically when appropriate.
-
-</details><br>
-
-<details>
-<summary><strong>Understanding the Task Agent</strong> - Smart output handling for commands</summary>
-
-The Task agent runs shell commands on your behalf — tests, builds, linters, installs. It's the agent that actually *executes* things, and it's smart about what it shows you:
-
+Where is the Task Agent in this? It works behind the scenes to manage and track what is going on an to report back in a clean and clear formatL
 
 | Outcome | What You See |
 |---------|--------------|
 | ✅ **Success** | Brief summary (e.g., "All 247 tests passed", "Build succeeded") |
 | ❌ **Failure** | Full output with stack traces, compiler errors, and detailed logs |
 
-**Why this design?** It keeps your conversation context clean. You don't need 500 lines of passing test output - you just need to know it worked. But when something breaks, you get all the details needed to debug.
-
-**Example prompts that use the Task agent:**
-```bash
-> Run the tests
-> Build the project
-> Install the dependencies
-> Run the linter on src/
-```
-
-The Task agent uses a faster model since it's focused on command execution rather than complex reasoning.
 
 > 📚 **Official Documentation**: [GitHub Copilot CLI Agents](https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#use-custom-agents)
 
-</details><br>
 
 ---
+<br>
 
 # Creating Custom Agents
 
