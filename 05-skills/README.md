@@ -55,9 +55,9 @@ copilot
 # and checks against your team's standards
 ```
 
-> 💡 **Key Insight**: Skills are **automatically triggered** based on your prompt matching the skill's description. You don't need to type a special command. Just ask naturally and Copilot applies relevant skills behind the scenes.
+> 💡 **Key Insight**: Skills are **automatically triggered** based on your prompt matching the skill's description. Just ask naturally and Copilot applies relevant skills behind the scenes. You can also invoke skills directly as well which you'll learn about next.
 
-> 🧰 **Ready-to-use templates**: Check out the [samples/skills](../samples/skills/) folder for simple copy-paste skills you can try out immediately.
+> 🧰 **Ready-to-use templates**: Check out the [samples/skills](../samples/skills/) folder for simple copy-paste skills you can try out.
 
 ### Direct Slash Command Invocation
 
@@ -93,7 +93,7 @@ You can ask Copilot directly:
 
 Skills are just one piece of GitHub Copilot's extensibility model. Here's how they compare to agents and MCP servers.
 
-> *Don't worry about MCP yet - we'll cover it in [Chapter 06](../06-mcp/). It's included here so you can see how skills fit into the overall picture.*
+> *Don't worry about MCP quite yet. We'll cover it in [Chapter 06](../06-mcp/). It's included here so you can see how skills fit into the overall picture.*
 
 <img src="images/skills-agents-mcp-comparison.png" alt="Comparison diagram showing the differences between Agents, Skills, and MCP Servers and how they combine into your workflow" width="800"/>
 
@@ -191,9 +191,7 @@ copilot
 
 ## Consistency at Scale: Team PR Review Skill
 
-Imagine your team has a 10-point PR checklist. Without a skill, every developer must remember all 10 points, and someone always forgets #6 or #9.
-
-With a `pr-review` skill, the entire team gets consistent reviews:
+Imagine your team has a 10-point PR checklist. Without a skill, every developer must remember all 10 points, and someone always forgets one of them. With a `pr-review` skill, the entire team gets consistent reviews:
 
 ```bash
 copilot
@@ -231,7 +229,7 @@ PR Review: feature/user-auth
 
 ## Creating Custom Skills
 
-Skills are stored in `~/.copilot/skills/` (global) or `.github/skills/` (project-specific).
+Skills are stored in `~/.copilot/skills/` (user level) or `.github/skills/` (project-specific).
 
 ### How Copilot Finds Skills
 
@@ -241,8 +239,8 @@ Copilot automatically scans these locations for skills:
 |----------|-------|
 | `.github/skills/` | Project-specific (shared with team via git) |
 | `.claude/skills/` | Project-specific (Claude Code compatible) |
-| `~/.copilot/skills/` | Global (your personal skills) |
-| `~/.claude/skills/` | Global (Claude Code compatible) |
+| `~/.copilot/skills/` | User-specific (your personal skills) |
+| `~/.claude/skills/` | User-specific (Claude Code compatible) |
 
 > 💡 **Cross-Platform**: If you've already set up skills for Claude Code in `.claude/skills/`, Copilot picks them up automatically!
 
@@ -268,7 +266,7 @@ Skills use a simple markdown format with YAML frontmatter:
 
 ```markdown
 ---
-name: my-code-review
+name: code-review
 description: Comprehensive code review with security, performance, and maintainability checks
 license: MIT
 ---
@@ -408,11 +406,11 @@ description: Use for security reviews, vulnerability scanning,
 Skills and agents work together. The agent provides expertise, the skill provides specific instructions:
 
 ```bash
-# Start with a python-reviewer agent
-copilot --agent python-reviewer
+# Start with a code-reviewer agent
+copilot --agent code-reviewer
 
 > Review the book app for issues
-# python-reviewer agent's expertise combines
+# code-reviewer agent's expertise combines
 # with your code-review skill's checklist
 ```
 
@@ -420,7 +418,7 @@ copilot --agent python-reviewer
 
 ## Hands-On Examples
 
-Here are two more skills showing different patterns. Follow the same `mkdir` + `cat` workflow from "Creating Your First Skill" above. More examples are available in [samples/skills/](../samples/skills/).
+Here are two more skills showing different patterns. Follow the same `mkdir` + `cat` workflow from "Creating Your First Skill" above or copy and paste the skills into the proper location. More examples are available in [samples/skills](../samples/skills).
 
 ### Example 1: pytest Test Generation Skill
 
@@ -600,7 +598,7 @@ Plugins can bundle multiple capabilities together - a single plugin might includ
 
 Pre-made skills are also available from community repositories:
 
-- **[github/awesome-copilot](https://github.com/github/awesome-copilot)** - Official GitHub Copilot resources including skills documentation and examples
+- **[Awesome Copilot](https://github.com/github/awesome-copilot)** - Official GitHub Copilot resources including skills documentation and examples
 
 ### Installing a Community Skill Manually
 
@@ -610,7 +608,7 @@ To use a community skill without the plugin system, copy its folder to your skil
 # Clone the awesome-copilot repository
 git clone https://github.com/github/awesome-copilot.git /tmp/awesome-copilot
 
-# Copy a specific skill to your skills directory
+# Copy a specific skill to your user skills directory
 cp -r /tmp/awesome-copilot/skills/code-review ~/.copilot/skills/
 
 # Or for project-specific use

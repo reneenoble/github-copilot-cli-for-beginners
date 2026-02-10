@@ -42,6 +42,8 @@ This chapter covers five workflows that developers typically use. **However, you
 | Write better commits and PRs | [Workflow 5: Git Integration](#workflow-5-git-integration) |
 | See a full bug-fix workflow end to end | [Putting It All Together](#putting-it-all-together-bug-fix-workflow) |
 
+**Click to expand any of the following workflows** and see how GitHub Copilot CLI can enhance your development process in that area. 
+
 ---
 
 <a id="workflow-1-code-review"></a>
