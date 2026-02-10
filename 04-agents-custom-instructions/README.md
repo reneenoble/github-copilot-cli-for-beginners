@@ -48,7 +48,7 @@ Never used or made an agent? Here's all you need to know to get started for this
    ```
    This invokes the Plan agent to create a step-by-step implementation plan.
 
-2. **See one of our custom agent examples:** It's simple to define an agent's instructions, look at our provided [python-reviewer.agent.md](../samples/agents/python-reviewer.agent.md) file to see the pattern.
+2. **See one of our custom agent examples:** It's simple to define an agent's instructions, look at our provided [python-reviewer.agent.md](../.github/agents/python-reviewer.agent.md) file to see the pattern.
 
 3. **Understand the core concept:** Agents are like consulting a specialist instead of a generalist. A "frontend agent" will focus on accessibility and component patterns automatically, you don't have to remind it because it is already specified in the agent's instructions.
 
@@ -57,8 +57,8 @@ Never used or made an agent? Here's all you need to know to get started for this
 
 ### 🗂️ Add your agents 
 
-**Put some agent files into the `.github/agents/` folder of this project**. 
-<br>You can write your own, or copy/customize our ready-to-use templates from the [samples/agents](../samples/agents/) folder.
+**This project includes sample agent files in the [.github/agents/](../.github/agents/) folder**.
+<br>You can write your own, or customize the ones already provided.
 
 <details>
 <summary>📂 See the sample agents we provide</summary>
@@ -70,11 +70,8 @@ Never used or made an agent? Here's all you need to know to get started for this
 | `pytest-helper.agent.md` | Pytest testing specialist |
 
 ```bash
-# Copy all sample agents into your project
-cp samples/agents/*.agent.md .github/agents/
-
 # Or copy one to your personal agents folder (available in every project)
-cp samples/agents/python-reviewer.agent.md ~/.copilot/agents/
+cp .github/agents/python-reviewer.agent.md ~/.copilot/agents/
 ```
 
 For more community agents, see [github/awesome-copilot](https://github.com/github/awesome-copilot)
@@ -680,11 +677,11 @@ copilot --no-custom-instructions
 
 ```bash
 
-# Create the agents directory
-mkdir -p ~/.copilot/agents
+# Create the agents directory (if it doesn't exist)
+mkdir -p .github/agents
 
 # Create a code reviewer agent
-cat > ~/.copilot/agents/reviewer.agent.md << 'EOF'
+cat > .github/agents/reviewer.agent.md << 'EOF'
 ---
 name: reviewer
 description: Senior code reviewer focused on security and best practices
@@ -706,7 +703,7 @@ Provide issues as a numbered list with severity tags:
 EOF
 
 # Create a documentation agent
-cat > ~/.copilot/agents/documentor.agent.md << 'EOF'
+cat > .github/agents/documentor.agent.md << 'EOF'
 ---
 name: documentor
 description: Technical writer for clear and complete documentation

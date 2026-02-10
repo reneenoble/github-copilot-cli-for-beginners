@@ -57,7 +57,7 @@ copilot
 
 > 💡 **Key Insight**: Skills are **automatically triggered** based on your prompt matching the skill's description. Just ask naturally and Copilot applies relevant skills behind the scenes. You can also invoke skills directly as well which you'll learn about next.
 
-> 🧰 **Ready-to-use templates**: Check out the [samples/skills](../samples/skills/) folder for simple copy-paste skills you can try out.
+> 🧰 **Ready-to-use templates**: Check out the [.github/skills](../.github/skills/) folder for simple copy-paste skills you can try out.
 
 ### Direct Slash Command Invocation
 
@@ -229,7 +229,7 @@ PR Review: feature/user-auth
 
 ## Creating Custom Skills
 
-Skills are stored in `~/.copilot/skills/` (user level) or `.github/skills/` (project-specific).
+Skills are stored in `.github/skills/` (project-specific) or `~/.copilot/skills/` (user level).
 
 ### How Copilot Finds Skills
 
@@ -249,7 +249,7 @@ Copilot automatically scans these locations for skills:
 Each skill lives in its own folder with a `SKILL.md` file. You can optionally include scripts, examples, or other resources:
 
 ```
-~/.copilot/skills/
+.github/skills/
 └── my-skill/
     ├── SKILL.md           # Required: Skill definition and instructions
     ├── examples/          # Optional: Example files Copilot can reference
@@ -315,10 +315,10 @@ Provide issues as a numbered list with severity:
 
 ```bash
 # Create skill directory
-mkdir -p ~/.copilot/skills/security-audit
+mkdir -p .github/skills/security-audit
 
 # Create the SKILL.md file
-cat > ~/.copilot/skills/security-audit/SKILL.md << 'EOF'
+cat > .github/skills/security-audit/SKILL.md << 'EOF'
 ---
 name: security-audit
 description: Security-focused code review checking OWASP (Open Web Application Security Project) Top 10 vulnerabilities
@@ -418,16 +418,16 @@ copilot --agent code-reviewer
 
 ## Hands-On Examples
 
-Here are two more skills showing different patterns. Follow the same `mkdir` + `cat` workflow from "Creating Your First Skill" above or copy and paste the skills into the proper location. More examples are available in [samples/skills](../samples/skills).
+Here are two more skills showing different patterns. Follow the same `mkdir` + `cat` workflow from "Creating Your First Skill" above or copy and paste the skills into the proper location. More examples are available in [.github/skills](../.github/skills).
 
 ### Example 1: pytest Test Generation Skill
 
 A skill that ensures consistent pytest structure across your codebase:
 
 ```bash
-mkdir -p ~/.copilot/skills/pytest-gen
+mkdir -p .github/skills/pytest-gen
 
-cat > ~/.copilot/skills/pytest-gen/SKILL.md << 'EOF'
+cat > .github/skills/pytest-gen/SKILL.md << 'EOF'
 ---
 name: pytest-gen
 description: Generate comprehensive pytest tests with fixtures and edge cases
@@ -464,9 +464,9 @@ EOF
 A skill that enforces consistent PR review standards across your team:
 
 ```bash
-mkdir -p ~/.copilot/skills/pr-review
+mkdir -p .github/skills/pr-review
 
-cat > ~/.copilot/skills/pr-review/SKILL.md << 'EOF'
+cat > .github/skills/pr-review/SKILL.md << 'EOF'
 ---
 name: pr-review
 description: Team-standard PR review checklist
@@ -538,9 +538,10 @@ Available skills:
 
 > /skills info security-audit
 
-Name: security-audit
+Skill: security-audit
+Source: Project
+Location: .github/skills/security-audit/SKILL.md
 Description: Security-focused code review checking OWASP Top 10 vulnerabilities
-Location: ~/.copilot/skills/security-audit/
 ```
 
 ---
@@ -608,11 +609,11 @@ To use a community skill without the plugin system, copy its folder to your skil
 # Clone the awesome-copilot repository
 git clone https://github.com/github/awesome-copilot.git /tmp/awesome-copilot
 
-# Copy a specific skill to your user skills directory
-cp -r /tmp/awesome-copilot/skills/code-review ~/.copilot/skills/
-
-# Or for project-specific use
+# Copy a specific skill to your project
 cp -r /tmp/awesome-copilot/skills/code-review .github/skills/
+
+# Or for personal use across all projects
+cp -r /tmp/awesome-copilot/skills/code-review ~/.copilot/skills/
 ```
 
 ---
@@ -642,21 +643,22 @@ After completing the demos, try these variations:
 
 The hands-on examples created `pytest-gen` and `pr-review` skills. Now practice creating a completely different kind of skill: one for generating formatted output from data.
 
-1. List your current skills: `ls ~/.copilot/skills/`
-2. Create a `book-summary` skill at `~/.copilot/skills/book-summary/SKILL.md` that generates a formatted markdown summary of the book collection
+1. List your current skills: Run Copilot and pass it `/skills list`. You can also use `ls .github/skills/` to see project skills or `ls ~/.copilot/skills/` for personal skills.
+2. Create a `book-summary` skill at `.github/skills/book-summary/SKILL.md` that generates a formatted markdown summary of the book collection
 3. Your skill should have:
    - Clear name and description (description is crucial for matching!)
    - Specific formatting rules (e.g., markdown table with title, author, year, read status)
    - Output conventions (e.g., use ✅/❌ for read status, sort by year)
 4. Test the skill: `@samples/book-app-project/data.json Summarize the books in this collection`
 5. Verify the skill auto-triggers by checking `/skills list`
+6. Try invoking it directly with `/book-summary Summarize the books in this collection`
 
 **Success criteria**: You have a working `book-summary` skill that Copilot automatically applies when you ask about the book collection.
 
 <details>
 <summary>💡 Hints (click to expand)</summary>
 
-**Starter template**: Create `~/.copilot/skills/book-summary/SKILL.md`:
+**Starter template**: Create `.github/skills/book-summary/SKILL.md`:
 
 ```markdown
 ---
@@ -712,7 +714,7 @@ copilot
 | Naming the file something other than `SKILL.md` | Skill won't be recognized | The file must be named exactly `SKILL.md` |
 | Vague `description` field | Skill never gets loaded automatically | Description is the PRIMARY discovery mechanism. Use specific trigger words |
 | Missing `name` or `description` in frontmatter | Skill fails to load | Add both fields in YAML frontmatter |
-| Wrong folder location | Skill not found | Use `~/.copilot/skills/skill-name/` (personal) or `.github/skills/` (project) |
+| Wrong folder location | Skill not found | Use `.github/skills/skill-name/` (project) or `~/.copilot/skills/skill-name/` (personal) |
 
 ### Troubleshooting
 
@@ -730,11 +732,11 @@ copilot
 
 2. **Verify the file location**:
    ```bash
-   # Global skills
-   ls ~/.copilot/skills/
-
    # Project skills
    ls .github/skills/
+
+   # User skills
+   ls ~/.copilot/skills/
    ```
 
 3. **Check SKILL.md format**: Frontmatter is required:
@@ -749,10 +751,12 @@ copilot
 
 **Skill not appearing** - Verify the folder structure:
 ```
-~/.copilot/skills/
+.github/skills/
 └── my-skill/           # Folder name
     └── SKILL.md        # Must be exactly SKILL.md (case-sensitive)
 ```
+
+Run `/skills reload` after creating or editing skills to ensure changes are picked up.
 
 **Testing if a skill loads** - Ask Copilot directly:
 ```bash
@@ -783,7 +787,7 @@ copilot
 1. **Skills are automatic**: Copilot loads them when your prompt matches the skill's description
 2. **Direct invocation**: You can also invoke skills directly with `/skill-name` as a slash command
 3. **SKILL.md format**: YAML frontmatter (name, description, optional license) plus markdown instructions
-4. **Locations matter**: `.github/skills/` for team sharing, `~/.copilot/skills/` for personal use
+4. **Location matters**: `.github/skills/` for project/team sharing, `~/.copilot/skills/` for personal use
 5. **Cross-platform**: Same skill format works in GitHub Copilot CLI, VS Code, and Claude Code
 6. **Description is key**: Write descriptions that match how you naturally ask questions
 

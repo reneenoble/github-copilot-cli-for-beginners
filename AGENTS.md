@@ -11,10 +11,8 @@ Beginner-friendly course teaching GitHub Copilot CLI. Educational content, not s
 | `samples/book-app-buggy/` | **Intentional bugs** for debugging exercises (Ch 03) |
 | `samples/buggy-code/` | **Optional extra**: Security-focused buggy code (JS and Python) |
 | `samples/src/` | **Optional extra**: Legacy JS/React samples from earlier course version |
-| `samples/agents/` | Agent templates (python-reviewer, pytest-helper, hello-world) |
-| `samples/skills/` | Skill templates (code-review, pytest-gen, commit-message, hello-world) |
-| `QUICK-REFERENCE.md` | Command cheat sheet (source of truth) |
-| `QUICK-REFERENCE.pdf` | Auto-generated from above |
+| `.github/agents/` | Agent templates (python-reviewer, pytest-helper, hello-world) |
+| `.github/skills/` | Skill templates (code-review, pytest-gen, commit-message, hello-world) |
 
 ## Do
 
