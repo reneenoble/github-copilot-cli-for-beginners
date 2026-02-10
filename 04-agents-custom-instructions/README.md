@@ -4,7 +4,7 @@
 
 In Chapter 03, you mastered the essential workflows: code review, refactoring, debugging, test generation, and git integration. Those make you highly productive with GitHub Copilot CLI. Now, let's take it further.
 
-So far, you've been using Copilot CLI as a general-purpose assistant. Agents let you give it a specific persona with built-in standards — like a code reviewer that enforces type hints and PEP 8, or a testing helper that writes pytest cases. You'll see how the same prompt gets noticeably better results when handled by an agent with targeted instructions.
+So far, you've been using Copilot CLI as a general-purpose assistant. Agents let you give it a specific persona with built-in standards, like a code reviewer that enforces type hints and PEP 8, or a testing helper that writes pytest cases. You'll see how the same prompt gets noticeably better results when handled by an agent with targeted instructions.
 
 ## Learning Objectives
 
@@ -50,7 +50,7 @@ Never used or made an agent? Here's all you need to know to get started for this
 
 2. **See one of our custom agent examples:** It's simple to define an agent's instructions, look at our provided [python-reviewer.agent.md](../samples/agents/python-reviewer.agent.md) file to see the pattern.
 
-3. **Understand the core concept:** Agents are like consulting a specialist instead of a generalist. A "frontend agent" will focus on accessibility and component patterns automatically, you don't have to remind it because it is already specified in teh agent's instructions.
+3. **Understand the core concept:** Agents are like consulting a specialist instead of a generalist. A "frontend agent" will focus on accessibility and component patterns automatically, you don't have to remind it because it is already specified in the agent's instructions.
 
 
 ## Using agents with Copilot CLI
@@ -65,7 +65,7 @@ Never used or made an agent? Here's all you need to know to get started for this
 
 | File | Description |
 |------|-------------|
-| `hello-world.agent.md` | Minimal example — start here |
+| `hello-world.agent.md` | Minimal example - start here |
 | `python-reviewer.agent.md` | Python code quality reviewer |
 | `pytest-helper.agent.md` | Pytest testing specialist |
 
@@ -103,7 +103,7 @@ To change to a different agent, or to return to default mode, use the `/agent` c
 <!-- TODO -->
 ❌ TODO see it in action - add a gif
 
-*Demo output varies — your model, tools, and responses will differ from what's shown here.*
+*Demo output varies - your model, tools, and responses will differ from what's shown here.*
 </details> <br>
 
 
@@ -149,7 +149,7 @@ copilot
 > Explore how book data is loaded    # Uses Explore agent
 ```
 
-Where is the Task Agent in this? It works behind the scenes to manage and track what is going on an to report back in a clean and clear formatL
+Where is the Task Agent in this? It works behind the scenes to manage and track what is going on and to report back in a clean and clear format:
 
 | Outcome | What You See |
 |---------|--------------|
@@ -167,7 +167,7 @@ Where is the Task Agent in this? It works behind the scenes to manage and track 
 
 > 💡 **This section is optional.** The built-in agents (`/plan`, `/review`) are powerful enough for most workflows. Create custom agents when you need specialized expertise that's consistently applied across your work.
 
-Each topic below is self-contained. **Pick what interests you — you don't need to read them all at once.**
+Each topic below is self-contained. **Pick what interests you - you don't need to read them all at once.**
 
 | I want to... | Jump to |
 |---|---|
@@ -517,7 +517,7 @@ copilot
 
 ![Python Reviewer Demo](images/python-reviewer-demo.gif)
 
-*Demo output varies — your model, tools, and responses will differ from what's shown here.*
+*Demo output varies - your model, tools, and responses will differ from what's shown here.*
 
 </details>
 
@@ -740,7 +740,7 @@ copilot
 
 ### Main Challenge: Build a Specialized Agent Team
 
-The hands-on example created `reviewer` and `documentor` agents. Now practice creating and using agents for a different task — improving data validation in the book app:
+The hands-on example created `reviewer` and `documentor` agents. Now practice creating and using agents for a different task - improving data validation in the book app:
 
 1. Create 3 agents tailored to the book app. You can either:
    - Create individual `.agent.md` files (one per agent), **or**
@@ -760,7 +760,7 @@ The hands-on example created `reviewer` and `documentor` agents. Now practice cr
 <details>
 <summary>💡 Hints (click to expand)</summary>
 
-**Starter template** — Copy this to `AGENTS.md` in your project root:
+**Starter template** - Copy this to `AGENTS.md` in your project root:
 
 ```markdown
 ---
@@ -883,34 +883,17 @@ copilot  # This loads custom instructions by default
 
 ---
 
-## Preview: Agents vs Skills
-
-Before moving to the next chapter, here's a preview of how agents differ from skills:
-
-| | Agents | Skills |
-|---|---|---|
-| **Analogy** | Hiring a specialist (frontend expert) | Giving someone a detailed checklist |
-| **What it provides** | Persona, expertise, coding standards | Step-by-step instructions for a specific task |
-| **How it's invoked** | **Manual** - `/agent` or `--agent frontend` | **Automatic** - triggered when your prompt matches |
-| **Scope** | Broad domain expertise | Narrow, specific task |
-| **Example** | "Frontend agent" knows React patterns, accessibility, TypeScript | "Security audit skill" runs OWASP Top 10 checks |
-
-**The key insight**: An agent is *who* is helping you (a frontend specialist with years of experience). A skill is *what procedure* they follow (run this specific security checklist step by step).
-
-You can combine them: Ask your **security agent** to use your **penetration-testing skill** for a comprehensive security review.
-
----
-
 ## What's Next
 
-Agents change *how* Copilot thinks. Now let's add new *capabilities* with the Skills system.
+Agents change *how Copilot approaches and takes targeted actions* in your code. Next, you'll learn about **skills** - which change *what steps* it follows. Wondering how agents and skills differ? Chapter 05 covers that head-on.
 
 In **[Chapter 05: Skills System](../05-skills/README.md)**, you'll learn:
 
+- How skills auto-trigger from your prompts (no slash command needed)
 - Installing community skills
-- Creating custom skills
-- How skills auto-trigger from prompts
-- When to use skills vs agents
+- Creating custom skills with SKILL.md files
+- The difference between agents, skills, and MCP
+- When to use each one
 
 ---
 

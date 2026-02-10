@@ -64,9 +64,17 @@ copilot
 
 ### Coming from Chapter 04? Agents vs Skills
 
-If you just learned about agents: **agents are who helps you** (expertise), **skills are what procedure they follow** (consistency). You can combine both for maximum power!
+If you just finished the agents chapter, here's how skills compare:
 
-> 📖 For a detailed comparison table, see [Preview: Agents vs Skills](../04-agents-custom-instructions/README.md#preview-agents-vs-skills) in Chapter 04.
+| | Agents | Skills |
+|---|---|---|
+| **Analogy** | Hiring a specialist | Giving someone a detailed checklist |
+| **What it provides** | Persona, expertise, coding standards | Step-by-step instructions for a specific task |
+| **How it's invoked** | **Manual** - `/agent` or `--agent name` | **Automatic** - triggered when your prompt matches |
+| **Scope** | Broad domain expertise | Narrow, specific task |
+| **Example** | "Python reviewer" enforces PEP 8, type hints | "Security audit" runs OWASP Top 10 checks |
+
+**The key insight**: An agent changes *how Copilot approaches* your code. A skill changes *what steps* it follows. You can combine them - ask your **security agent** to use your **penetration-testing skill**.
 
 ### Direct Slash Command Invocation
 
@@ -82,7 +90,7 @@ While auto-triggering is the primary way skills work, you can also **invoke skil
 This gives you explicit control when you want to ensure a specific skill is used.
 
 > 📝 **Skills vs Agents Invocation**: Don't confuse skill invocation with agent invocation:
-> - **Skills**: `/skill-name <prompt>` — e.g., `/code-review Check this file`
+> - **Skills**: `/skill-name <prompt>` - e.g., `/code-review Check this file`
 > - **Agents**: `/agent` (select from list) or `copilot --agent <name>` (command line)
 > 
 > If you have both a skill and an agent with the same name (e.g., "code-reviewer"), typing `/code-reviewer` invokes the **skill**, not the agent.
@@ -244,7 +252,7 @@ Code Review: books.py
 
 ![Skill Trigger Demo](images/skill-trigger-demo.gif)
 
-*Demo output varies — your model, tools, and responses will differ from what's shown here.*
+*Demo output varies - your model, tools, and responses will differ from what's shown here.*
 
 </details>
 
@@ -361,7 +369,7 @@ Location: ~/.copilot/skills/security-audit/
 
 ![List Skills Demo](images/list-skills-demo.gif)
 
-*Demo output varies — your model, tools, and responses will differ from what's shown here.*
+*Demo output varies - your model, tools, and responses will differ from what's shown here.*
 
 </details>
 
@@ -628,7 +636,7 @@ After completing the demos, try these variations:
 
 ### Main Challenge: Build a Book Summary Skill
 
-The hands-on examples created `pytest-gen` and `pr-review` skills. Now practice creating a completely different kind of skill — one for generating formatted output from data:
+The hands-on examples created `pytest-gen` and `pr-review` skills. Now practice creating a completely different kind of skill - one for generating formatted output from data:
 
 1. List your current skills: `ls ~/.copilot/skills/`
 2. Create a `book-summary` skill at `~/.copilot/skills/book-summary/SKILL.md` that generates a formatted markdown summary of the book collection
@@ -644,7 +652,7 @@ The hands-on examples created `pytest-gen` and `pr-review` skills. Now practice 
 <details>
 <summary>💡 Hints (click to expand)</summary>
 
-**Starter template** — Create `~/.copilot/skills/book-summary/SKILL.md`:
+**Starter template** - Create `~/.copilot/skills/book-summary/SKILL.md`:
 
 ```markdown
 ---
